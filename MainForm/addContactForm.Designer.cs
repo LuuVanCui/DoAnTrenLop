@@ -251,7 +251,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(514, 691);
+            this.ClientSize = new System.Drawing.Size(514, 695);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAddContact);
             this.Controls.Add(this.buttonUploadPic);

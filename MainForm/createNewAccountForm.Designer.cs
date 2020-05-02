@@ -116,41 +116,46 @@
             // textBoxID
             // 
             this.textBoxID.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.textBoxID.Location = new System.Drawing.Point(179, 99);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(135, 26);
+            this.textBoxID.Size = new System.Drawing.Size(215, 26);
             this.textBoxID.TabIndex = 1;
             // 
             // textBoxFirstName
             // 
             this.textBoxFirstName.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxFirstName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBoxFirstName.Location = new System.Drawing.Point(178, 153);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(254, 26);
+            this.textBoxFirstName.Size = new System.Drawing.Size(342, 26);
             this.textBoxFirstName.TabIndex = 1;
             // 
             // textBoxLastName
             // 
             this.textBoxLastName.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxLastName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBoxLastName.Location = new System.Drawing.Point(179, 208);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(253, 26);
+            this.textBoxLastName.Size = new System.Drawing.Size(341, 26);
             this.textBoxLastName.TabIndex = 1;
             // 
             // textBoxUser
             // 
             this.textBoxUser.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBoxUser.Location = new System.Drawing.Point(179, 261);
             this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(253, 26);
+            this.textBoxUser.Size = new System.Drawing.Size(341, 26);
             this.textBoxUser.TabIndex = 1;
             // 
             // textBoxPass
             // 
             this.textBoxPass.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxPass.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBoxPass.Location = new System.Drawing.Point(179, 320);
             this.textBoxPass.Name = "textBoxPass";
-            this.textBoxPass.Size = new System.Drawing.Size(253, 26);
+            this.textBoxPass.Size = new System.Drawing.Size(341, 26);
             this.textBoxPass.TabIndex = 1;
             // 
             // buttonRegister
@@ -158,7 +163,7 @@
             this.buttonRegister.BackColor = System.Drawing.Color.Teal;
             this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegister.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRegister.Location = new System.Drawing.Point(70, 623);
+            this.buttonRegister.Location = new System.Drawing.Point(155, 634);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(324, 56);
             this.buttonRegister.TabIndex = 3;
@@ -171,7 +176,7 @@
             this.linkLabelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.linkLabelLogin.LinkColor = System.Drawing.Color.White;
-            this.linkLabelLogin.Location = new System.Drawing.Point(68, 693);
+            this.linkLabelLogin.Location = new System.Drawing.Point(106, 712);
             this.linkLabelLogin.Name = "linkLabelLogin";
             this.linkLabelLogin.Size = new System.Drawing.Size(326, 29);
             this.linkLabelLogin.TabIndex = 4;
@@ -198,7 +203,7 @@
             this.buttonloadPic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonloadPic.Location = new System.Drawing.Point(179, 570);
             this.buttonloadPic.Name = "buttonloadPic";
-            this.buttonloadPic.Size = new System.Drawing.Size(254, 38);
+            this.buttonloadPic.Size = new System.Drawing.Size(342, 38);
             this.buttonloadPic.TabIndex = 3;
             this.buttonloadPic.Text = "Load Picture";
             this.buttonloadPic.UseVisualStyleBackColor = false;
@@ -209,7 +214,7 @@
             this.pictureBoxPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxPicture.Location = new System.Drawing.Point(179, 377);
             this.pictureBoxPicture.Name = "pictureBoxPicture";
-            this.pictureBoxPicture.Size = new System.Drawing.Size(253, 196);
+            this.pictureBoxPicture.Size = new System.Drawing.Size(341, 196);
             this.pictureBoxPicture.TabIndex = 2;
             this.pictureBoxPicture.TabStop = false;
             // 
@@ -217,8 +222,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(487, 731);
+            this.ClientSize = new System.Drawing.Size(568, 762);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabelLogin);
             this.Controls.Add(this.buttonloadPic);

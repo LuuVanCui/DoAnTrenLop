@@ -166,6 +166,7 @@
             this.lblNewUser.TabIndex = 6;
             this.lblNewUser.TabStop = true;
             this.lblNewUser.Text = "New user?";
+            this.lblNewUser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblNewUser_LinkClicked);
             // 
             // btnLogin
             // 
@@ -201,6 +202,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linkLabel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Form";

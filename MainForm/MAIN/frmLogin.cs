@@ -55,5 +55,11 @@ namespace MainForm
                 MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void lblNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            createNewAccountForm newAccount = new createNewAccountForm();
+            newAccount.Show(this);
+        }
     }
 }

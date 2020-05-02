@@ -30,9 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.listBoxGroup = new System.Windows.Forms.ListBox();
+            this.dataGridViewShowData = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShowData)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,26 +57,26 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Show All";
             // 
-            // listBox1
+            // listBoxGroup
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 32;
-            this.listBox1.Location = new System.Drawing.Point(39, 87);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(284, 324);
-            this.listBox1.TabIndex = 1;
+            this.listBoxGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxGroup.ForeColor = System.Drawing.Color.YellowGreen;
+            this.listBoxGroup.FormattingEnabled = true;
+            this.listBoxGroup.ItemHeight = 32;
+            this.listBoxGroup.Location = new System.Drawing.Point(39, 87);
+            this.listBoxGroup.Name = "listBoxGroup";
+            this.listBoxGroup.Size = new System.Drawing.Size(284, 324);
+            this.listBoxGroup.TabIndex = 1;
             // 
-            // dataGridView1
+            // dataGridViewShowData
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(339, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(855, 324);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridViewShowData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewShowData.Location = new System.Drawing.Point(339, 87);
+            this.dataGridViewShowData.Name = "dataGridViewShowData";
+            this.dataGridViewShowData.RowHeadersWidth = 62;
+            this.dataGridViewShowData.RowTemplate.Height = 28;
+            this.dataGridViewShowData.Size = new System.Drawing.Size(868, 324);
+            this.dataGridViewShowData.TabIndex = 2;
             // 
             // contactFullListForm
             // 
@@ -84,13 +84,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.ClientSize = new System.Drawing.Size(1229, 430);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.dataGridViewShowData);
+            this.Controls.Add(this.listBoxGroup);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "contactFullListForm";
-            this.Text = "contactFullListForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Contact Full List";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShowData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,7 +100,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ListBox listBoxGroup;
+        private System.Windows.Forms.DataGridView dataGridViewShowData;
     }
 }
