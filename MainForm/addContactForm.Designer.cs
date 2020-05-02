@@ -35,7 +35,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxGroup = new System.Windows.Forms.ComboBox();
+            this.comboBoxGroupID = new System.Windows.Forms.ComboBox();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
@@ -44,11 +44,11 @@
             this.buttonUploadPic = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPicture = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -128,13 +128,13 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Picture:";
             // 
-            // textBoxGroup
+            // comboBoxGroupID
             // 
-            this.textBoxGroup.FormattingEnabled = true;
-            this.textBoxGroup.Location = new System.Drawing.Point(154, 180);
-            this.textBoxGroup.Name = "textBoxGroup";
-            this.textBoxGroup.Size = new System.Drawing.Size(319, 28);
-            this.textBoxGroup.TabIndex = 1;
+            this.comboBoxGroupID.FormattingEnabled = true;
+            this.comboBoxGroupID.Location = new System.Drawing.Point(154, 180);
+            this.comboBoxGroupID.Name = "comboBoxGroupID";
+            this.comboBoxGroupID.Size = new System.Drawing.Size(319, 28);
+            this.comboBoxGroupID.TabIndex = 1;
             // 
             // textBoxFirstName
             // 
@@ -179,10 +179,11 @@
             this.buttonUploadPic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonUploadPic.Location = new System.Drawing.Point(154, 553);
             this.buttonUploadPic.Name = "buttonUploadPic";
-            this.buttonUploadPic.Size = new System.Drawing.Size(164, 32);
+            this.buttonUploadPic.Size = new System.Drawing.Size(173, 32);
             this.buttonUploadPic.TabIndex = 4;
             this.buttonUploadPic.Text = "Upload Picture";
             this.buttonUploadPic.UseVisualStyleBackColor = false;
+            this.buttonUploadPic.Click += new System.EventHandler(this.buttonUploadPic_Click);
             // 
             // buttonAddContact
             // 
@@ -195,6 +196,7 @@
             this.buttonAddContact.TabIndex = 4;
             this.buttonAddContact.Text = "Add Contact";
             this.buttonAddContact.UseVisualStyleBackColor = false;
+            this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
             // buttonCancel
             // 
@@ -207,15 +209,16 @@
             this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // pictureBox1
+            // pictureBoxPicture
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(154, 421);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 135);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxPicture.Location = new System.Drawing.Point(154, 421);
+            this.pictureBoxPicture.Name = "pictureBoxPicture";
+            this.pictureBoxPicture.Size = new System.Drawing.Size(164, 135);
+            this.pictureBoxPicture.TabIndex = 3;
+            this.pictureBoxPicture.TabStop = false;
             // 
             // label8
             // 
@@ -255,14 +258,14 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAddContact);
             this.Controls.Add(this.buttonUploadPic);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxPicture);
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.textBoxFirstName);
-            this.Controls.Add(this.textBoxGroup);
+            this.Controls.Add(this.comboBoxGroupID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -276,7 +279,8 @@
             this.Name = "addContactForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addContactForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.addContactForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,13 +295,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox textBoxGroup;
+        private System.Windows.Forms.ComboBox comboBoxGroupID;
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxAddress;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxPicture;
         private System.Windows.Forms.Button buttonUploadPic;
         private System.Windows.Forms.Button buttonAddContact;
         private System.Windows.Forms.Button buttonCancel;

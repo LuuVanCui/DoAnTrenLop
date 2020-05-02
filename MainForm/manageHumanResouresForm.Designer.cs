@@ -40,19 +40,19 @@
             this.textBoxContactID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBoxSelectGroup = new System.Windows.Forms.ComboBox();
+            this.textBoxNewGroupName = new System.Windows.Forms.TextBox();
+            this.buttonEditGroupName = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.comboBoxSelectGroupName = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.buttonRemoveGroup = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxGroupName = new System.Windows.Forms.TextBox();
             this.buttonAddGroup = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBoxSelectGroup = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxNewGroupName = new System.Windows.Forms.TextBox();
-            this.buttonEditGroupName = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxSelectGroupName = new System.Windows.Forms.ComboBox();
-            this.buttonRemoveGroup = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -104,6 +104,7 @@
             this.buttonAddContact.TabIndex = 2;
             this.buttonAddContact.Text = "Add";
             this.buttonAddContact.UseVisualStyleBackColor = false;
+            this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
             // buttonEditContact
             // 
@@ -116,6 +117,7 @@
             this.buttonEditContact.TabIndex = 2;
             this.buttonEditContact.Text = "Edit";
             this.buttonEditContact.UseVisualStyleBackColor = false;
+            this.buttonEditContact.Click += new System.EventHandler(this.buttonEditContact_Click);
             // 
             // buttonSelectContact
             // 
@@ -128,6 +130,7 @@
             this.buttonSelectContact.TabIndex = 2;
             this.buttonSelectContact.Text = "Select Contact";
             this.buttonSelectContact.UseVisualStyleBackColor = false;
+            this.buttonSelectContact.Click += new System.EventHandler(this.buttonSelectContact_Click);
             // 
             // buttonRemoveContact
             // 
@@ -140,6 +143,7 @@
             this.buttonRemoveContact.TabIndex = 2;
             this.buttonRemoveContact.Text = "Remove";
             this.buttonRemoveContact.UseVisualStyleBackColor = false;
+            this.buttonRemoveContact.Click += new System.EventHandler(this.buttonRemoveContact_Click);
             // 
             // buttonShowFullList
             // 
@@ -152,6 +156,7 @@
             this.buttonShowFullList.TabIndex = 2;
             this.buttonShowFullList.Text = "Show Full List";
             this.buttonShowFullList.UseVisualStyleBackColor = false;
+            this.buttonShowFullList.Click += new System.EventHandler(this.buttonShowFullList_Click);
             // 
             // label3
             // 
@@ -197,6 +202,57 @@
             this.panel3.Size = new System.Drawing.Size(551, 194);
             this.panel3.TabIndex = 5;
             // 
+            // comboBoxSelectGroup
+            // 
+            this.comboBoxSelectGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSelectGroup.FormattingEnabled = true;
+            this.comboBoxSelectGroup.Location = new System.Drawing.Point(245, 13);
+            this.comboBoxSelectGroup.Name = "comboBoxSelectGroup";
+            this.comboBoxSelectGroup.Size = new System.Drawing.Size(287, 33);
+            this.comboBoxSelectGroup.TabIndex = 1;
+            // 
+            // textBoxNewGroupName
+            // 
+            this.textBoxNewGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNewGroupName.Location = new System.Drawing.Point(245, 66);
+            this.textBoxNewGroupName.Name = "textBoxNewGroupName";
+            this.textBoxNewGroupName.Size = new System.Drawing.Size(287, 30);
+            this.textBoxNewGroupName.TabIndex = 3;
+            // 
+            // buttonEditGroupName
+            // 
+            this.buttonEditGroupName.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.buttonEditGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditGroupName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonEditGroupName.Location = new System.Drawing.Point(157, 112);
+            this.buttonEditGroupName.Name = "buttonEditGroupName";
+            this.buttonEditGroupName.Size = new System.Drawing.Size(206, 64);
+            this.buttonEditGroupName.TabIndex = 2;
+            this.buttonEditGroupName.Text = "Edit";
+            this.buttonEditGroupName.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(36, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(203, 29);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Enter New Name:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(79, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(160, 29);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Select Group:";
+            // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -207,6 +263,38 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(551, 168);
             this.panel4.TabIndex = 6;
+            // 
+            // comboBoxSelectGroupName
+            // 
+            this.comboBoxSelectGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSelectGroupName.FormattingEnabled = true;
+            this.comboBoxSelectGroupName.Location = new System.Drawing.Point(245, 28);
+            this.comboBoxSelectGroupName.Name = "comboBoxSelectGroupName";
+            this.comboBoxSelectGroupName.Size = new System.Drawing.Size(287, 33);
+            this.comboBoxSelectGroupName.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(79, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(160, 29);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Select Group:";
+            // 
+            // buttonRemoveGroup
+            // 
+            this.buttonRemoveGroup.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.buttonRemoveGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRemoveGroup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonRemoveGroup.Location = new System.Drawing.Point(157, 81);
+            this.buttonRemoveGroup.Name = "buttonRemoveGroup";
+            this.buttonRemoveGroup.Size = new System.Drawing.Size(206, 64);
+            this.buttonRemoveGroup.TabIndex = 2;
+            this.buttonRemoveGroup.Text = "Remove";
+            this.buttonRemoveGroup.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -249,90 +337,6 @@
             this.buttonAddGroup.TabIndex = 2;
             this.buttonAddGroup.Text = "Add";
             this.buttonAddGroup.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(79, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 29);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Select Group:";
-            // 
-            // comboBoxSelectGroup
-            // 
-            this.comboBoxSelectGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSelectGroup.FormattingEnabled = true;
-            this.comboBoxSelectGroup.Location = new System.Drawing.Point(245, 13);
-            this.comboBoxSelectGroup.Name = "comboBoxSelectGroup";
-            this.comboBoxSelectGroup.Size = new System.Drawing.Size(287, 33);
-            this.comboBoxSelectGroup.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(36, 66);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(203, 29);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Enter New Name:";
-            // 
-            // textBoxNewGroupName
-            // 
-            this.textBoxNewGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNewGroupName.Location = new System.Drawing.Point(245, 66);
-            this.textBoxNewGroupName.Name = "textBoxNewGroupName";
-            this.textBoxNewGroupName.Size = new System.Drawing.Size(287, 30);
-            this.textBoxNewGroupName.TabIndex = 3;
-            this.textBoxNewGroupName.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // buttonEditGroupName
-            // 
-            this.buttonEditGroupName.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.buttonEditGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditGroupName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonEditGroupName.Location = new System.Drawing.Point(157, 112);
-            this.buttonEditGroupName.Name = "buttonEditGroupName";
-            this.buttonEditGroupName.Size = new System.Drawing.Size(206, 64);
-            this.buttonEditGroupName.TabIndex = 2;
-            this.buttonEditGroupName.Text = "Edit";
-            this.buttonEditGroupName.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(79, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(160, 29);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Select Group:";
-            // 
-            // comboBoxSelectGroupName
-            // 
-            this.comboBoxSelectGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSelectGroupName.FormattingEnabled = true;
-            this.comboBoxSelectGroupName.Location = new System.Drawing.Point(245, 28);
-            this.comboBoxSelectGroupName.Name = "comboBoxSelectGroupName";
-            this.comboBoxSelectGroupName.Size = new System.Drawing.Size(287, 33);
-            this.comboBoxSelectGroupName.TabIndex = 1;
-            // 
-            // buttonRemoveGroup
-            // 
-            this.buttonRemoveGroup.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.buttonRemoveGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemoveGroup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRemoveGroup.Location = new System.Drawing.Point(157, 81);
-            this.buttonRemoveGroup.Name = "buttonRemoveGroup";
-            this.buttonRemoveGroup.Size = new System.Drawing.Size(206, 64);
-            this.buttonRemoveGroup.TabIndex = 2;
-            this.buttonRemoveGroup.Text = "Remove";
-            this.buttonRemoveGroup.UseVisualStyleBackColor = false;
             // 
             // manageHumanResouresForm
             // 

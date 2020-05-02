@@ -139,6 +139,12 @@
       <DependentUpon>editContactForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GROUP.cs" />
+    <Compile Include="manageHumanResouresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manageHumanResouresForm.Designer.cs">
+      <DependentUpon>manageHumanResouresForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RESULT\resultForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="editContactForm.resx">
       <DependentUpon>editContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manageHumanResouresForm.resx">
+      <DependentUpon>manageHumanResouresForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RESULT\resultForm.resx">
       <DependentUpon>resultForm.cs</DependentUpon>

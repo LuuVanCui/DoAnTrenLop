@@ -24,11 +24,14 @@ namespace MainForm
             {
                 Application.Run(new frmMain());
             }
+            else if (fLogin.ShowDialog() == DialogResult.Yes)
+            {
+                Application.Run(new manageHumanResouresForm());
+            }   
             else
             {
                 Application.Exit();
-            }
-            
+            } 
         }
     }
 }

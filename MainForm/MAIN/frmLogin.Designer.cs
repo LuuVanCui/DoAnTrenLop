@@ -160,7 +160,7 @@
             this.lblNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewUser.ForeColor = System.Drawing.SystemColors.Control;
             this.lblNewUser.LinkColor = System.Drawing.Color.White;
-            this.lblNewUser.Location = new System.Drawing.Point(37, 399);
+            this.lblNewUser.Location = new System.Drawing.Point(33, 393);
             this.lblNewUser.Name = "lblNewUser";
             this.lblNewUser.Size = new System.Drawing.Size(75, 17);
             this.lblNewUser.TabIndex = 6;

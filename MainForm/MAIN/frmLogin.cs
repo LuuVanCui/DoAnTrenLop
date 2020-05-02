@@ -20,7 +20,7 @@ namespace MainForm
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            rBtnStudent.Checked = true;
         }
         
         private void btnCancel_Click(object sender, EventArgs e)
@@ -30,29 +30,57 @@ namespace MainForm
         
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            MY_DB db = new MY_DB(); 
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-
-            DataTable table = new DataTable();
-
-            SqlCommand command = new SqlCommand("SELECT * FROM login WHERE username = @User AND password = @Pass", db.getConnection);
-
-            command.Parameters.Add("@User", SqlDbType.VarChar).Value = txtUser.Text;
-            command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = txtPass.Text;
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
-            if  (table.Rows.Count > 0)
+            if (rBtnStudent.Checked == true)
             {
-              //  MessageBox.Show("OK, next time will be go to Main Menu of App");
-                this.DialogResult = DialogResult.OK;    
+                MY_DB db = new MY_DB();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                DataTable table = new DataTable();
+
+                SqlCommand command = new SqlCommand("SELECT * FROM login WHERE username = @User AND password = @Pass", db.getConnection);
+
+                command.Parameters.Add("@User", SqlDbType.VarChar).Value = txtUser.Text;
+                command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = txtPass.Text;
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0)
+                {
+                    //  login with student
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MY_DB db = new MY_DB();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                DataTable table = new DataTable();
+
+                SqlCommand command = new SqlCommand("SELECT * FROM hr WHERE uname = @User AND pwd = @Pass", db.getConnection);
+
+                command.Parameters.Add("@User", SqlDbType.VarChar).Value = txtUser.Text;
+                command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = txtPass.Text;
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0)
+                {
+                    //  login with human resourses
+                    this.DialogResult = DialogResult.Yes;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

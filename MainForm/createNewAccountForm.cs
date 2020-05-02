@@ -35,8 +35,8 @@ namespace MainForm
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 USER user = new USER();
                 int id = Int32.Parse(textBoxID.Text);
                 string fname = textBoxFirstName.Text;
@@ -61,11 +61,11 @@ namespace MainForm
                 {
                     MessageBox.Show("Empty Fields", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-          //  }
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         // chức năng kiểm tra dữ liệu input
