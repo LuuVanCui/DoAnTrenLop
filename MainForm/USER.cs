@@ -15,11 +15,11 @@ namespace MainForm
         MY_DB mydb = new MY_DB();
         public bool insertUser(int id, string fname, string lname, string uname, string pwd, MemoryStream picture)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO mycontact (id, fname, lname, uname, pwd, fig)" +
+            SqlCommand command = new SqlCommand("INSERT INTO hr (id, fname, lname, uname, pwd, fig)" +
                 "VALUES (@id, @fn, @ln, @uname, @pwd, @pic)", mydb.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            command.Parameters.Add("@fn", SqlDbType.VarChar).Value = fname;
-            command.Parameters.Add("@ln", SqlDbType.VarChar).Value = lname;
+            command.Parameters.Add("@fn", SqlDbType.NChar).Value = fname;
+            command.Parameters.Add("@ln", SqlDbType.NChar).Value = lname;
             command.Parameters.Add("@uname", SqlDbType.NChar).Value = uname;
             command.Parameters.Add("@pwd", SqlDbType.NChar).Value = pwd;
             command.Parameters.Add("@pic", SqlDbType.Image).Value = picture.ToArray();
@@ -48,7 +48,7 @@ namespace MainForm
 
         public bool deleteUser(int id)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM myuser WHERE id = @id", mydb.getConnection);
+            SqlCommand command = new SqlCommand("DELETE FROM hr WHERE id = @id", mydb.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
             mydb.openConnection();
@@ -75,7 +75,7 @@ namespace MainForm
 
         public bool updateUser(int id, string fname, string lname, string uname, string pwd, MemoryStream picture)
         {
-            SqlCommand command = new SqlCommand("UPDATE myuser SET fname=@fn, lname=@ln, uname=@uname, pwd=@pwd, fig=@pic WHERE id=@ID", mydb.getConnection);
+            SqlCommand command = new SqlCommand("UPDATE hr SET fname=@fn, lname=@ln, uname=@uname, pwd=@pwd, fig=@pic WHERE id=@ID", mydb.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             command.Parameters.Add("@fn", SqlDbType.VarChar).Value = fname;
             command.Parameters.Add("@ln", SqlDbType.VarChar).Value = lname;
@@ -112,6 +112,38 @@ namespace MainForm
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
+        }
+
+        public bool usernameExist(string username, string operation, int userid = 0)
+        {
+            string query = "";
+
+            if (operation == "register")
+            {
+                query = "SELECT * FROM hr WHERE uname = @un";
+            }    
+            else if (operation == "edit")
+            {
+                query = "SELECT * FROM hr WHERE uname = @un AND id <> @uid";
+            }
+
+            SqlCommand command = new SqlCommand(query, mydb.getConnection);
+
+            command.Parameters.Add("@un", SqlDbType.VarChar).Value = username;
+            command.Parameters.Add("@uid", SqlDbType.Int).Value = userid;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }    
+            else
+            {
+                return false;
+            }    
         }
     }
 }

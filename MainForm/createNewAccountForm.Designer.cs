@@ -169,6 +169,7 @@
             this.buttonRegister.TabIndex = 3;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // linkLabelLogin
             // 
@@ -182,6 +183,7 @@
             this.linkLabelLogin.TabIndex = 4;
             this.linkLabelLogin.TabStop = true;
             this.linkLabelLogin.Text = "<< Have an account? Login";
+            this.linkLabelLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogin_LinkClicked);
             // 
             // linkLabel2
             // 
@@ -207,14 +209,16 @@
             this.buttonloadPic.TabIndex = 3;
             this.buttonloadPic.Text = "Load Picture";
             this.buttonloadPic.UseVisualStyleBackColor = false;
+            this.buttonloadPic.Click += new System.EventHandler(this.buttonloadPic_Click);
             // 
             // pictureBoxPicture
             // 
-            this.pictureBoxPicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pictureBoxPicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.pictureBoxPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxPicture.Location = new System.Drawing.Point(179, 377);
             this.pictureBoxPicture.Name = "pictureBoxPicture";
             this.pictureBoxPicture.Size = new System.Drawing.Size(341, 196);
+            this.pictureBoxPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPicture.TabIndex = 2;
             this.pictureBoxPicture.TabStop = false;
             // 
