@@ -74,6 +74,8 @@ namespace MainForm
 
                 if (table.Rows.Count > 0)
                 {
+                    Globals.GlobalUserID = Convert.ToInt32(table.Rows[0]["id"].ToString());
+                    
                     //  login with human resourses
                     this.DialogResult = DialogResult.Yes;
                 }

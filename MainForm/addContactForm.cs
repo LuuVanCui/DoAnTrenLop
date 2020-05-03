@@ -42,7 +42,7 @@ namespace MainForm
                 int id = Int32.Parse(textBoxID.Text);
                 string fname = textBoxFirstName.Text;
                 string lname = textBoxLastName.Text;
-                string group_id = comboBoxGroupID.Text;
+                string group_id = comboBoxGroupID.SelectedValue.ToString();
                 string phone = textBoxPhone.Text;
                 string email = textBoxEmail.Text;
                 string address = textBoxAddress.Text;
@@ -93,10 +93,10 @@ namespace MainForm
         private void addContactForm_Load(object sender, EventArgs e)
         {
             GROUP group = new GROUP();
-            string query = "SELECT * FROM [group]";
-            comboBoxGroupID.DataSource = group.getGroupList(new SqlCommand(query));
-            comboBoxGroupID.ValueMember = "id";
-            comboBoxGroupID.DisplayMember = "name";
+            string query = "SELECT * FROM [group] WHERE";
+            //comboBoxGroupID.DataSource = group.getGroups();
+            //comboBoxGroupID.ValueMember = "id";
+            //comboBoxGroupID.DisplayMember = "name";
         }
     }
 }

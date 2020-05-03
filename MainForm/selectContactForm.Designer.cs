@@ -42,6 +42,7 @@
             this.dataGridViewData.RowTemplate.Height = 28;
             this.dataGridViewData.Size = new System.Drawing.Size(600, 597);
             this.dataGridViewData.TabIndex = 0;
+            this.dataGridViewData.Click += new System.EventHandler(this.dataGridViewData_Click);
             // 
             // selectContactForm
             // 
@@ -52,6 +53,7 @@
             this.Name = "selectContactForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "selectContactForm";
+            this.Load += new System.EventHandler(this.selectContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
 
@@ -59,6 +61,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewData;
+        public System.Windows.Forms.DataGridView dataGridViewData;
     }
 }

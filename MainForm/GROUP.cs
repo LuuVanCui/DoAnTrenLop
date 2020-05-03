@@ -15,7 +15,7 @@ namespace MainForm
         MY_DB mydb = new MY_DB();
         public bool insertGroup(int id,string name, int userid)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO group (id, name, userid)" +
+            SqlCommand command = new SqlCommand("INSERT INTO [group] (id, name, userid)" +
                 "VALUES (@id, @name, @userid)", mydb.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             command.Parameters.Add("@name", SqlDbType.NChar).Value = name;
@@ -45,7 +45,7 @@ namespace MainForm
 
         public bool deleteGroup(int id)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM group WHERE id = @id", mydb.getConnection);
+            SqlCommand command = new SqlCommand("DELETE FROM [group] WHERE id = @id", mydb.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
             mydb.openConnection();
@@ -70,12 +70,11 @@ namespace MainForm
             }
         }
 
-        public bool updateGroup(int id, string name, int userid)
+        public bool updateGroup(int id, string name)
         {
-            SqlCommand command = new SqlCommand("UPDATE group SET name = @name, userid = @userid WHERE id=@ID", mydb.getConnection);
+            SqlCommand command = new SqlCommand("UPDATE [group] SET name = @name WHERE id=@ID", mydb.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             command.Parameters.Add("@name", SqlDbType.NChar).Value = name;
-            command.Parameters.Add("@userid", SqlDbType.Int).Value = userid;
 
             mydb.openConnection();
 
@@ -99,13 +98,50 @@ namespace MainForm
             }
         }
 
-        public DataTable getGroupList(SqlCommand command)
+        public DataTable getGroups(int userid)
         {
+            SqlCommand command = new SqlCommand("SELECT * FROM [group] WHERE userid = @uid");
+            command.Parameters.Add("@uid", SqlDbType.Int).Value = userid;
             command.Connection = mydb.getConnection;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
+        }
+
+        public bool groupExist(string name, string operation, int userid = 0, int groupid = 0)
+        {
+            string query = "";
+            SqlCommand command = new SqlCommand();
+            if (operation == "add")
+            {
+                query = "SELECT * FROM [group] WHERE name = @name AND userid = @uid";
+                command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+                command.Parameters.Add("@uid", SqlDbType.Int).Value = userid;
+            }
+            else if (operation == "edit")
+            {
+                query = "SELECT * FROM [group] WHERE name = @name AND userid = @uid AND id <> @gid";
+                command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+                command.Parameters.Add("@uid", SqlDbType.Int).Value = userid;
+                command.Parameters.Add("@gid", SqlDbType.Int).Value = groupid;
+            }
+
+            command.Connection = mydb.getConnection;
+            command.CommandText = query;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

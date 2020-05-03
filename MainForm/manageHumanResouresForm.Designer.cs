@@ -51,6 +51,7 @@
             this.buttonRemoveGroup = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBoxGroupID = new System.Windows.Forms.TextBox();
             this.textBoxGroupName = new System.Windows.Forms.TextBox();
             this.buttonAddGroup = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -230,6 +231,7 @@
             this.buttonEditGroupName.TabIndex = 2;
             this.buttonEditGroupName.Text = "Edit";
             this.buttonEditGroupName.UseVisualStyleBackColor = false;
+            this.buttonEditGroupName.Click += new System.EventHandler(this.buttonEditGroupName_Click);
             // 
             // label6
             // 
@@ -295,11 +297,13 @@
             this.buttonRemoveGroup.TabIndex = 2;
             this.buttonRemoveGroup.Text = "Remove";
             this.buttonRemoveGroup.UseVisualStyleBackColor = false;
+            this.buttonRemoveGroup.Click += new System.EventHandler(this.buttonRemoveGroup_Click);
             // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.textBoxGroupID);
             this.panel5.Controls.Add(this.textBoxGroupName);
             this.panel5.Controls.Add(this.buttonAddGroup);
             this.panel5.Location = new System.Drawing.Point(652, 112);
@@ -318,12 +322,20 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Enter Group Name:";
             // 
+            // textBoxGroupID
+            // 
+            this.textBoxGroupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxGroupID.Location = new System.Drawing.Point(432, 28);
+            this.textBoxGroupID.Name = "textBoxGroupID";
+            this.textBoxGroupID.Size = new System.Drawing.Size(100, 30);
+            this.textBoxGroupID.TabIndex = 3;
+            // 
             // textBoxGroupName
             // 
             this.textBoxGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGroupName.Location = new System.Drawing.Point(245, 29);
             this.textBoxGroupName.Name = "textBoxGroupName";
-            this.textBoxGroupName.Size = new System.Drawing.Size(287, 30);
+            this.textBoxGroupName.Size = new System.Drawing.Size(161, 30);
             this.textBoxGroupName.TabIndex = 3;
             // 
             // buttonAddGroup
@@ -337,6 +349,7 @@
             this.buttonAddGroup.TabIndex = 2;
             this.buttonAddGroup.Text = "Add";
             this.buttonAddGroup.UseVisualStyleBackColor = false;
+            this.buttonAddGroup.Click += new System.EventHandler(this.buttonAddGroup_Click);
             // 
             // manageHumanResouresForm
             // 
@@ -355,7 +368,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "manageHumanResouresForm";
-            this.Text = "manageHumanResouresForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Manage Human Resources";
+            this.Load += new System.EventHandler(this.manageHumanResouresForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -396,5 +411,6 @@
         private System.Windows.Forms.Button buttonAddGroup;
         private System.Windows.Forms.ComboBox comboBoxSelectGroupName;
         private System.Windows.Forms.Button buttonRemoveGroup;
+        private System.Windows.Forms.TextBox textBoxGroupID;
     }
 }

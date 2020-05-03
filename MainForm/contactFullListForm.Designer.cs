@@ -65,25 +65,27 @@
             this.listBoxGroup.ItemHeight = 32;
             this.listBoxGroup.Location = new System.Drawing.Point(39, 87);
             this.listBoxGroup.Name = "listBoxGroup";
-            this.listBoxGroup.Size = new System.Drawing.Size(284, 324);
+            this.listBoxGroup.Size = new System.Drawing.Size(284, 484);
             this.listBoxGroup.TabIndex = 1;
+            this.listBoxGroup.Click += new System.EventHandler(this.listBoxGroup_Click);
             // 
             // dataGridViewShowData
             // 
+            this.dataGridViewShowData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewShowData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewShowData.Location = new System.Drawing.Point(339, 87);
             this.dataGridViewShowData.Name = "dataGridViewShowData";
             this.dataGridViewShowData.RowHeadersWidth = 62;
             this.dataGridViewShowData.RowTemplate.Height = 28;
-            this.dataGridViewShowData.Size = new System.Drawing.Size(868, 324);
+            this.dataGridViewShowData.Size = new System.Drawing.Size(868, 484);
             this.dataGridViewShowData.TabIndex = 2;
             // 
             // contactFullListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.ClientSize = new System.Drawing.Size(1229, 430);
+            this.BackColor = System.Drawing.Color.Firebrick;
+            this.ClientSize = new System.Drawing.Size(1229, 605);
             this.Controls.Add(this.dataGridViewShowData);
             this.Controls.Add(this.listBoxGroup);
             this.Controls.Add(this.label2);
@@ -91,6 +93,7 @@
             this.Name = "contactFullListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contact Full List";
+            this.Load += new System.EventHandler(this.contactFullListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShowData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

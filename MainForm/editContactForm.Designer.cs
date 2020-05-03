@@ -44,12 +44,12 @@
             this.buttonUploadPic = new System.Windows.Forms.Button();
             this.buttonEditContact = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPicture = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.buttonSelectContact = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -184,6 +184,7 @@
             this.buttonUploadPic.TabIndex = 4;
             this.buttonUploadPic.Text = "Upload Picture";
             this.buttonUploadPic.UseVisualStyleBackColor = false;
+            this.buttonUploadPic.Click += new System.EventHandler(this.buttonUploadPic_Click);
             // 
             // buttonEditContact
             // 
@@ -196,6 +197,7 @@
             this.buttonEditContact.TabIndex = 4;
             this.buttonEditContact.Text = "Edit Contact";
             this.buttonEditContact.UseVisualStyleBackColor = false;
+            this.buttonEditContact.Click += new System.EventHandler(this.buttonEditContact_Click);
             // 
             // buttonCancel
             // 
@@ -210,14 +212,15 @@
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // pictureBox1
+            // pictureBoxPicture
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(156, 476);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 135);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxPicture.Location = new System.Drawing.Point(156, 476);
+            this.pictureBoxPicture.Name = "pictureBoxPicture";
+            this.pictureBoxPicture.Size = new System.Drawing.Size(164, 135);
+            this.pictureBoxPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPicture.TabIndex = 3;
+            this.pictureBoxPicture.TabStop = false;
             // 
             // label8
             // 
@@ -249,17 +252,18 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Edit Contact";
             // 
-            // button1
+            // buttonSelectContact
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkGreen;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(280, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 40);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Select Contact";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonSelectContact.BackColor = System.Drawing.Color.DarkGreen;
+            this.buttonSelectContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSelectContact.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonSelectContact.Location = new System.Drawing.Point(280, 81);
+            this.buttonSelectContact.Name = "buttonSelectContact";
+            this.buttonSelectContact.Size = new System.Drawing.Size(195, 40);
+            this.buttonSelectContact.TabIndex = 4;
+            this.buttonSelectContact.Text = "Select Contact";
+            this.buttonSelectContact.UseVisualStyleBackColor = false;
+            this.buttonSelectContact.Click += new System.EventHandler(this.buttonSelectContact_Click);
             // 
             // editContactForm
             // 
@@ -267,11 +271,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(514, 749);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonSelectContact);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonEditContact);
             this.Controls.Add(this.buttonUploadPic);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxPicture);
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxPhone);
@@ -292,7 +296,8 @@
             this.Name = "editContactForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addContactForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.editContactForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,13 +318,13 @@
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxAddress;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxPicture;
         private System.Windows.Forms.Button buttonUploadPic;
         private System.Windows.Forms.Button buttonEditContact;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonSelectContact;
     }
 }

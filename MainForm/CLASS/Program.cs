@@ -6,6 +6,11 @@ using System.Windows.Forms;
 
 namespace MainForm
 {
+    public static class Globals
+    {
+        public static Int32 GlobalUserID; // Modifiable in Code
+    }
+
     static class Program
     {
         /// <summary>
@@ -24,14 +29,10 @@ namespace MainForm
             {
                 Application.Run(new frmMain());
             }
-            else if (fLogin.ShowDialog() == DialogResult.Yes)
+            else
             {
                 Application.Run(new manageHumanResouresForm());
             }   
-            else
-            {
-                Application.Exit();
-            } 
         }
     }
 }
