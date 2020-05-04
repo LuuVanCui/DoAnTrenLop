@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -129,6 +131,15 @@ namespace MainForm
             comboBoxSelectGroupName.DataSource = table;
             comboBoxSelectGroupName.ValueMember = "id";
             comboBoxSelectGroupName.DisplayMember = "name";
+
+            // Fill info account
+            // get image
+            USER user = new USER();
+            DataTable hrTable = user.getUser(new SqlCommand("SELECT * FROM hr WHERE id = " + Globals.GlobalUserID));
+            byte[] bytes = (byte[])hrTable.Rows[0][5];
+            MemoryStream ms = new MemoryStream(bytes);
+            pictureBoxProfile.Image = Image.FromStream(ms);
+            labelWelcome.Text = "Welcome " + hrTable.Rows[0]["fname"].ToString().Trim() + " " + hrTable.Rows[0]["lname"].ToString();
         }
 
         private void buttonEditGroupName_Click(object sender, EventArgs e)
@@ -198,6 +209,22 @@ namespace MainForm
                 }    
             }
             catch { }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void linkLabelEditMyInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            editMyProfileForm myProfileForm = new editMyProfileForm();
+            myProfileForm.ShowDialog(this);
+        }
+
+        private void linkLabelRefresh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            manageHumanResouresForm_Load(sender, e);
         }
     }
 }
