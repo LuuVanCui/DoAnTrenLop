@@ -95,5 +95,16 @@ namespace MainForm
                 return true;
             }
         }
+
+        private void buttonUploadImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Select Image(*.jpg; *.png; *gif)|*.jpg; *.png; *gif";
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxProfile.Image = Image.FromFile(opf.FileName);
+            }
+
+        }
     }
 }

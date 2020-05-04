@@ -47,34 +47,42 @@ namespace MainForm
 
                 if (verif())
                 {
-                    pictureBoxPicture.Image.Save(pic, pictureBoxPicture.Image.RawFormat);
-                    if (user.insertUser(id, fname, lname, uname, pwd, pic))
+
+                    if (user.usernameExist(uname, "register"))
                     {
-                        MessageBox.Show("New User Added", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        MessageBox.Show("This User Name are already exist.", "Create New Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }   
                     else
                     {
-                        MessageBox.Show("Error", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        pictureBoxPicture.Image.Save(pic, pictureBoxPicture.Image.RawFormat);
+                        if (user.insertUser(id, fname, lname, uname, pwd, pic))
+                        {
+                            MessageBox.Show("Register Success!", "Create New Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error", "Create New Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }    
                 }
                 else
                 {
-                    MessageBox.Show("Empty Fields", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Empty Fields", "Create New Account", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message, "Create New Account", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         // chức năng kiểm tra dữ liệu input
         bool verif()
         {
-            if (textBoxFirstName.Text.Trim() == ""
-                || textBoxLastName.Text.Trim() == ""
-                || textBoxUser.Text.Trim() == ""
-                || textBoxPass.Text.Trim() == ""
+            if (textBoxFirstName.Text == null
+                || textBoxLastName.Text == null
+                || textBoxUser.Text == null
+                || textBoxPass.Text == null
                 || pictureBoxPicture.Image == null)
             {
                 return false;

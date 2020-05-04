@@ -201,6 +201,12 @@
     <Compile Include="selectContactForm.Designer.cs">
       <DependentUpon>selectContactForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="statisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="statisticsForm.Designer.cs">
+      <DependentUpon>statisticsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="STUDENT\frmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="selectContactForm.resx">
       <DependentUpon>selectContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="statisticsForm.resx">
+      <DependentUpon>statisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="STUDENT\frmAddStudent.resx">
       <DependentUpon>frmAddStudent.cs</DependentUpon>

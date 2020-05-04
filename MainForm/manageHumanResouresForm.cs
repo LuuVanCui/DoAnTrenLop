@@ -226,5 +226,11 @@ namespace MainForm
         {
             manageHumanResouresForm_Load(sender, e);
         }
+
+        private void buttonStatistics_Click(object sender, EventArgs e)
+        {
+            statisticsForm statistics = new statisticsForm();
+            statistics.ShowDialog();
+        }
     }
 }

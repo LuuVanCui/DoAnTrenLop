@@ -86,7 +86,5 @@ namespace MainForm
                       chartResult.Series["Result"].Points.AddXY(item[i], arr[i]);
                 }
         }
-            
-        
     }
 }
