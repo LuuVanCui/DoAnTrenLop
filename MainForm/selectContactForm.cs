@@ -22,11 +22,23 @@ namespace MainForm
         {
             dataGridViewData.ReadOnly = true;
             CONTACT contact = new CONTACT();
-            //SqlCommand command = new SqlCommand("SELECT  id ,  fname  as'first name',  lname  as 'last name',  group_id  as'group id' FROM  mycontact  WHERE  userid  = @uid");
-            //command.Parameters.Add("@uid", SqlDbType.Int).Value = Globals.GlobalUserId;
-            string query = "SELECT  id as 'Contact ID',  fname  as 'First Name',  lname  as 'Last Name',  group_id  as 'Group ID' FROM  mycontact";
-            dataGridViewData.DataSource = contact.getContact(new SqlCommand(query));
+            SqlCommand command = new SqlCommand("SELECT  id as 'Contact ID',  fname  as 'First Name',  lname  as 'Last Name',  group_id  as 'Group ID' FROM mycontact WHERE  userid  = @uid");
+            command.Parameters.Add("@uid", SqlDbType.Int).Value = Globals.GlobalUserID;
+            dataGridViewData.DataSource = contact.getContact(command);
             dataGridViewData.AllowUserToAddRows = false;
+
+            for (int i = 0; i < dataGridViewData.Rows.Count; i++)
+            {
+                if (isOdd(i))
+                {
+                    dataGridViewData.Rows[i].DefaultCellStyle.BackColor = Color.AntiqueWhite;
+                }
+            }
+        }
+
+        bool isOdd(int value)
+        {
+            return value % 2 != 0;
         }
 
         private void dataGridViewData_Click(object sender, EventArgs e)

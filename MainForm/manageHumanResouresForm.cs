@@ -31,9 +31,14 @@ namespace MainForm
 
         private void buttonSelectContact_Click(object sender, EventArgs e)
         {
-            selectContactForm selectContact = new selectContactForm();
-            selectContact.ShowDialog();
-            textBoxContactID.Text = selectContact.dataGridViewData.CurrentRow.Cells[0].Value.ToString();
+            try
+            {
+                selectContactForm selectContact = new selectContactForm();
+                selectContact.ShowDialog();
+                if (selectContact.dataGridViewData.Rows.Count > 0)    
+                   textBoxContactID.Text = selectContact.dataGridViewData.CurrentRow.Cells[0].Value.ToString();
+            }
+            catch { }
         }
 
         private void buttonRemoveContact_Click(object sender, EventArgs e)
@@ -69,22 +74,30 @@ namespace MainForm
             {
                 GROUP group = new GROUP();
                 string name = textBoxGroupName.Text.Trim();
-                int id = Int32.Parse(textBoxGroupID.Text);
+                int groupid = Int32.Parse(textBoxGroupID.Text);
                
                 if (verif())
                 {
-                    if (group.insertGroup(id, name, Globals.GlobalUserID))
+                    if (group.groupExist(name, "add", Globals.GlobalUserID, groupid))
                     {
-                        MessageBox.Show("New Group Added", "Add Group", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        MessageBox.Show("Group ID or Group Name are already exist.", "Add Group", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }   
                     else
                     {
-                        MessageBox.Show("Error", "Add Group", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        if (group.insertGroup(groupid, name, Globals.GlobalUserID))
+                        {
+                            MessageBox.Show("New Group Added.", "Add Group", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            manageHumanResouresForm_Load(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error", "Add Group", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }    
                 }
                 else
                 {
-                    MessageBox.Show("Empty Fields", "Add Group", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Empty Fields.", "Add Group", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception ex)
@@ -108,11 +121,12 @@ namespace MainForm
         private void manageHumanResouresForm_Load(object sender, EventArgs e)
         {
             GROUP group = new GROUP();
-            comboBoxSelectGroup.DataSource = group.getGroups(Globals.GlobalUserID);
+            DataTable table = group.getGroups(Globals.GlobalUserID);
+            comboBoxSelectGroup.DataSource = table;
             comboBoxSelectGroup.ValueMember = "id";
             comboBoxSelectGroup.DisplayMember = "name";
 
-            comboBoxSelectGroupName.DataSource = group.getGroups(Globals.GlobalUserID);
+            comboBoxSelectGroupName.DataSource = table;
             comboBoxSelectGroupName.ValueMember = "id";
             comboBoxSelectGroupName.DisplayMember = "name";
         }
@@ -122,24 +136,32 @@ namespace MainForm
             try
             {
                 GROUP group = new GROUP();
-                int id = Convert.ToInt32(comboBoxSelectGroup.SelectedValue.ToString());
-                string name = textBoxNewGroupName.Text;
-
-                if (verif())
+                DataTable table = group.getGroups(Globals.GlobalUserID);
+                if (table.Rows.Count > 0)
                 {
-                    if (group.updateGroup(id, name))
+                    int id = Convert.ToInt32(comboBoxSelectGroup.SelectedValue.ToString());
+                    string name = textBoxNewGroupName.Text;
+                    if (group.groupExist(name, "edit", Globals.GlobalUserID))
                     {
-                        MessageBox.Show("New Group Updated", "Edit Group Name", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        manageHumanResouresForm_Load(sender, e);
+                        MessageBox.Show("This group name are already exist.", "Edit Group Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show("Error", "Edit Group Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        if (group.updateGroup(id, name))
+                        {
+                            MessageBox.Show("New Group Updated", "Edit Group Name", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            manageHumanResouresForm_Load(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error", "Edit Group Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }    
                 }
+
                 else
                 {
-                    MessageBox.Show("Empty Fields", "Edit Group Name", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("There are no groups in your database.", "Edit Group Name", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception ex)
@@ -152,20 +174,28 @@ namespace MainForm
         {
             try
             {
-                int GroupId = Convert.ToInt32(comboBoxSelectGroupName.SelectedValue.ToString());
                 GROUP group = new GROUP();
-                if (MessageBox.Show("Do you want to delete this group?", "Delete Group", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                DataTable table = group.getGroups(Globals.GlobalUserID);
+                if (table.Rows.Count > 0)
                 {
-                    if (group.deleteGroup(GroupId))
+                    int GroupId = Convert.ToInt32(comboBoxSelectGroupName.SelectedValue.ToString());
+                    if (MessageBox.Show("Do you want to delete this group?", "Delete Group", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show("This group deleted", "Delete Group", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        manageHumanResouresForm_Load(sender, e);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Can not delete this group", "Delete Group", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (group.deleteGroup(GroupId))
+                        {
+                            MessageBox.Show("This group deleted", "Delete Group", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            manageHumanResouresForm_Load(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Can not delete this group", "Delete Group", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("There are no groups in your database.", "Delete Group", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }    
             }
             catch { }
         }

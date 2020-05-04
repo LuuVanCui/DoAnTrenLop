@@ -115,16 +115,16 @@ namespace MainForm
             SqlCommand command = new SqlCommand();
             if (operation == "add")
             {
-                query = "SELECT * FROM [group] WHERE name = @name AND userid = @uid";
-                command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
-                command.Parameters.Add("@uid", SqlDbType.Int).Value = userid;
-            }
-            else if (operation == "edit")
-            {
-                query = "SELECT * FROM [group] WHERE name = @name AND userid = @uid AND id <> @gid";
+                query = "SELECT * FROM [group] WHERE (name = @name OR id = @gid) AND userid = @uid";
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
                 command.Parameters.Add("@uid", SqlDbType.Int).Value = userid;
                 command.Parameters.Add("@gid", SqlDbType.Int).Value = groupid;
+            }
+            else if (operation == "edit")
+            {
+                query = "SELECT * FROM [group] WHERE name = @name AND userid = @uid";
+                command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+                command.Parameters.Add("@uid", SqlDbType.Int).Value = userid;
             }
 
             command.Connection = mydb.getConnection;

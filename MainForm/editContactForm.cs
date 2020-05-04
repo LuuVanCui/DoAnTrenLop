@@ -127,10 +127,18 @@ namespace MainForm
         private void editContactForm_Load(object sender, EventArgs e)
         {
             GROUP group = new GROUP();
-            string query = "SELECT * FROM [group]";
-            //comboBoxGroup.DataSource = group.getGroupList(new SqlCommand(query));
-            //comboBoxGroup.ValueMember = "id";
-            //comboBoxGroup.DisplayMember = "name";
+            DataTable table = group.getGroups(Globals.GlobalUserID);
+            if (table.Rows.Count > 0)
+            {
+                comboBoxGroup.DataSource = table;
+                comboBoxGroup.ValueMember = "id";
+                comboBoxGroup.DisplayMember = "name";
+            }
+            else
+            {
+                MessageBox.Show("You have to Create Group before editing contact.", "Edit Contact", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+            }
         }
     }
 }

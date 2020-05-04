@@ -93,10 +93,18 @@ namespace MainForm
         private void addContactForm_Load(object sender, EventArgs e)
         {
             GROUP group = new GROUP();
-            string query = "SELECT * FROM [group] WHERE";
-            //comboBoxGroupID.DataSource = group.getGroups();
-            //comboBoxGroupID.ValueMember = "id";
-            //comboBoxGroupID.DisplayMember = "name";
+            DataTable table = group.getGroups(Globals.GlobalUserID);
+            if (table.Rows.Count > 0)
+            {
+                comboBoxGroupID.DataSource = table;
+                comboBoxGroupID.ValueMember = "id";
+                comboBoxGroupID.DisplayMember = "name";
+            }
+            else
+            {
+                MessageBox.Show("You have to Create Group before adding new contact.", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+            }    
         }
     }
 }

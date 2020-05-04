@@ -16,6 +16,21 @@ namespace MainForm
         public contactFullListForm()
         {
             InitializeComponent();
+            dataGridViewShowData.Click += DataGridViewShowData_Click;
+        }
+
+        private void DataGridViewShowData_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewShowData.Rows.Count > 0)
+            {
+                textBoxFullAddress.Text = dataGridViewShowData.CurrentRow.Cells[5].Value.ToString();
+                textBoxFullAddress.ReadOnly = true;
+            }
+            else
+            {
+                textBoxFullAddress.Text = null;
+                textBoxFullAddress.ReadOnly = true;
+            }
         }
 
         private void contactFullListForm_Load(object sender, EventArgs e)
@@ -41,7 +56,7 @@ namespace MainForm
             {
                 if (IsOdd(i))
                 {
-                    dataGridViewShowData.Rows[i].DefaultCellStyle.BackColor = Color.DarkBlue;
+                    dataGridViewShowData.Rows[i].DefaultCellStyle.BackColor = Color.AntiqueWhite;
                 }    
             }
 
@@ -52,6 +67,8 @@ namespace MainForm
 
             listBoxGroup.SelectedItem = null;
             listBoxGroup.ClearSelected();
+
+            DataGridViewShowData_Click(sender, e);
         }
 
         public static bool IsOdd(int value)
@@ -73,15 +90,17 @@ namespace MainForm
                 SqlCommand command = new SqlCommand(query);
                 command.Parameters.Add("@userid", SqlDbType.Int).Value = Globals.GlobalUserID;
                 command.Parameters.Add("@groupid", SqlDbType.Int).Value = groupid;
-                dataGridViewShowData.DataSource = contact.getContact(new SqlCommand(query));
+                dataGridViewShowData.DataSource = contact.getContact(command);
 
                 for (int i = 0; i < dataGridViewShowData.Rows.Count; i++)
                 {
                     if (IsOdd(i))
                     {
-                        dataGridViewShowData.Rows[i].DefaultCellStyle.BackColor = Color.DarkBlue;
+                        dataGridViewShowData.Rows[i].DefaultCellStyle.BackColor = Color.AntiqueWhite;
                     }
                 }
+
+                DataGridViewShowData_Click(sender, e);
             }
             catch { }
             dataGridViewShowData.ClearSelection();
