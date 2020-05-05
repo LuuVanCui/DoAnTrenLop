@@ -42,7 +42,7 @@ namespace MainForm
                 int id = Int32.Parse(textBoxID.Text);
                 string fname = textBoxFirstName.Text;
                 string lname = textBoxLastName.Text;
-                string group_id = comboBoxGroupID.SelectedValue.ToString();
+                int group_id = Int32.Parse(comboBoxGroupID.SelectedValue.ToString());
                 string phone = textBoxPhone.Text;
                 string email = textBoxEmail.Text;
                 string address = textBoxAddress.Text;
@@ -50,15 +50,22 @@ namespace MainForm
 
                 if (verif())
                 {
-                    pictureBoxPicture.Image.Save(pic, pictureBoxPicture.Image.RawFormat);
-                    if (contact.insertContact(id, fname, lname, group_id, phone, email, address, pic))
+                    if (contact.contactExist(id, group_id))
                     {
-                        MessageBox.Show("New Contact Added", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        MessageBox.Show("Contact ID are already exist.", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }   
                     else
                     {
-                        MessageBox.Show("Error", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        pictureBoxPicture.Image.Save(pic, pictureBoxPicture.Image.RawFormat);
+                        if (contact.insertContact(id, fname, lname, group_id, phone, email, address, pic))
+                        {
+                            MessageBox.Show("New Contact Added", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }    
                 }
                 else
                 {
@@ -67,19 +74,19 @@ namespace MainForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message, "add contact", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         // chức năng kiểm tra dữ liệu input
         bool verif()
         {
-            if (textBoxFirstName.Text.Trim() == ""
-                || textBoxLastName.Text.Trim() == ""
-                || comboBoxGroupID.Text.Trim() == ""
-                || textBoxPhone.Text.Trim() == ""
-                || textBoxEmail.Text.Trim() == ""
-                || textBoxAddress.Text.Trim() == ""
+            if (textBoxFirstName.Text == null
+                || textBoxLastName.Text == null
+                || comboBoxGroupID.Text == null
+                || textBoxPhone.Text == null
+                || textBoxEmail.Text == null
+                || textBoxAddress.Text == null
                 || pictureBoxPicture.Image == null)
             {
                 return false;

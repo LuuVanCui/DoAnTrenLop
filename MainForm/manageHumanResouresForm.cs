@@ -37,8 +37,11 @@ namespace MainForm
             {
                 selectContactForm selectContact = new selectContactForm();
                 selectContact.ShowDialog();
-                if (selectContact.dataGridViewData.Rows.Count > 0)    
-                   textBoxContactID.Text = selectContact.dataGridViewData.CurrentRow.Cells[0].Value.ToString();
+                if (selectContact.dataGridViewData.Rows.Count > 0)
+                {
+                    textBoxContactID.Text = selectContact.dataGridViewData.CurrentRow.Cells[0].Value.ToString();
+                    textBoxGroupID_Remove.Text = selectContact.dataGridViewData.CurrentRow.Cells[3].Value.ToString();
+                }
             }
             catch { }
         }
@@ -48,10 +51,11 @@ namespace MainForm
             try
             {
                 int contactId = Convert.ToInt32(textBoxContactID.Text);
+                int groupId = Convert.ToInt32(textBoxGroupID_Remove.Text);
                 CONTACT contact = new CONTACT();
                 if (MessageBox.Show("Do you want to delete this contact?", "Delete Contact", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (contact.deleteContact(contactId))
+                    if (contact.deleteContact(contactId, groupId))
                     {
                         MessageBox.Show("This contact deleted", "Delete Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

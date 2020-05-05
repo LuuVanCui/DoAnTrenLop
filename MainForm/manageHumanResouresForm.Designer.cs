@@ -32,6 +32,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.linkLabelRefresh = new System.Windows.Forms.LinkLabel();
             this.linkLabelEditMyInfo = new System.Windows.Forms.LinkLabel();
+            this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -44,6 +45,7 @@
             this.comboBoxSelectGroupName = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonRemoveGroup = new System.Windows.Forms.Button();
+            this.buttonStatistics = new System.Windows.Forms.Button();
             this.buttonShowFullList = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboBoxSelectGroup = new System.Windows.Forms.ComboBox();
@@ -61,15 +63,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
-            this.buttonStatistics = new System.Windows.Forms.Button();
+            this.textBoxGroupID_Remove = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
@@ -124,6 +126,15 @@
             this.linkLabelEditMyInfo.TabStop = true;
             this.linkLabelEditMyInfo.Text = "Edit My Info";
             this.linkLabelEditMyInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelEditMyInfo_LinkClicked);
+            // 
+            // pictureBoxProfile
+            // 
+            this.pictureBoxProfile.Location = new System.Drawing.Point(0, -5);
+            this.pictureBoxProfile.Name = "pictureBoxProfile";
+            this.pictureBoxProfile.Size = new System.Drawing.Size(100, 101);
+            this.pictureBoxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxProfile.TabIndex = 1;
+            this.pictureBoxProfile.TabStop = false;
             // 
             // labelWelcome
             // 
@@ -271,6 +282,20 @@
             this.buttonRemoveGroup.UseVisualStyleBackColor = false;
             this.buttonRemoveGroup.Click += new System.EventHandler(this.buttonRemoveGroup_Click);
             // 
+            // buttonStatistics
+            // 
+            this.buttonStatistics.BackColor = System.Drawing.Color.DarkOrchid;
+            this.buttonStatistics.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStatistics.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonStatistics.Location = new System.Drawing.Point(58, 581);
+            this.buttonStatistics.Name = "buttonStatistics";
+            this.buttonStatistics.Size = new System.Drawing.Size(532, 63);
+            this.buttonStatistics.TabIndex = 11;
+            this.buttonStatistics.Text = "Statistic";
+            this.buttonStatistics.UseVisualStyleBackColor = false;
+            this.buttonStatistics.Click += new System.EventHandler(this.buttonStatistics_Click);
+            // 
             // buttonShowFullList
             // 
             this.buttonShowFullList.BackColor = System.Drawing.Color.DarkGreen;
@@ -354,13 +379,15 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.textBoxGroupID_Remove);
             this.panel2.Controls.Add(this.textBoxContactID);
             this.panel2.Controls.Add(this.buttonRemoveContact);
             this.panel2.Controls.Add(this.buttonSelectContact);
-            this.panel2.Location = new System.Drawing.Point(29, 309);
+            this.panel2.Location = new System.Drawing.Point(29, 253);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(587, 150);
+            this.panel2.Size = new System.Drawing.Size(587, 206);
             this.panel2.TabIndex = 14;
             // 
             // label3
@@ -388,7 +415,7 @@
             this.buttonRemoveContact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemoveContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRemoveContact.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRemoveContact.Location = new System.Drawing.Point(28, 79);
+            this.buttonRemoveContact.Location = new System.Drawing.Point(27, 124);
             this.buttonRemoveContact.Name = "buttonRemoveContact";
             this.buttonRemoveContact.Size = new System.Drawing.Size(532, 63);
             this.buttonRemoveContact.TabIndex = 2;
@@ -402,9 +429,9 @@
             this.buttonSelectContact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSelectContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSelectContact.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonSelectContact.Location = new System.Drawing.Point(366, 7);
+            this.buttonSelectContact.Location = new System.Drawing.Point(366, 36);
             this.buttonSelectContact.Name = "buttonSelectContact";
-            this.buttonSelectContact.Size = new System.Drawing.Size(203, 49);
+            this.buttonSelectContact.Size = new System.Drawing.Size(206, 49);
             this.buttonSelectContact.TabIndex = 2;
             this.buttonSelectContact.Text = "Select Contact";
             this.buttonSelectContact.UseVisualStyleBackColor = false;
@@ -416,7 +443,7 @@
             this.buttonEditContact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditContact.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonEditContact.Location = new System.Drawing.Point(58, 183);
+            this.buttonEditContact.Location = new System.Drawing.Point(47, 156);
             this.buttonEditContact.Name = "buttonEditContact";
             this.buttonEditContact.Size = new System.Drawing.Size(206, 64);
             this.buttonEditContact.TabIndex = 12;
@@ -430,7 +457,7 @@
             this.buttonAddContact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddContact.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonAddContact.Location = new System.Drawing.Point(58, 113);
+            this.buttonAddContact.Location = new System.Drawing.Point(47, 86);
             this.buttonAddContact.Name = "buttonAddContact";
             this.buttonAddContact.Size = new System.Drawing.Size(206, 64);
             this.buttonAddContact.TabIndex = 13;
@@ -472,28 +499,24 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Contact";
             // 
-            // pictureBoxProfile
+            // textBoxGroupID_Remove
             // 
-            this.pictureBoxProfile.Location = new System.Drawing.Point(0, -5);
-            this.pictureBoxProfile.Name = "pictureBoxProfile";
-            this.pictureBoxProfile.Size = new System.Drawing.Size(100, 101);
-            this.pictureBoxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxProfile.TabIndex = 1;
-            this.pictureBoxProfile.TabStop = false;
+            this.textBoxGroupID_Remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxGroupID_Remove.Location = new System.Drawing.Point(209, 67);
+            this.textBoxGroupID_Remove.Name = "textBoxGroupID_Remove";
+            this.textBoxGroupID_Remove.Size = new System.Drawing.Size(151, 30);
+            this.textBoxGroupID_Remove.TabIndex = 3;
             // 
-            // buttonStatistics
+            // label9
             // 
-            this.buttonStatistics.BackColor = System.Drawing.Color.DarkOrchid;
-            this.buttonStatistics.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStatistics.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonStatistics.Location = new System.Drawing.Point(58, 581);
-            this.buttonStatistics.Name = "buttonStatistics";
-            this.buttonStatistics.Size = new System.Drawing.Size(532, 63);
-            this.buttonStatistics.TabIndex = 11;
-            this.buttonStatistics.Text = "Statistic";
-            this.buttonStatistics.UseVisualStyleBackColor = false;
-            this.buttonStatistics.Click += new System.EventHandler(this.buttonStatistics_Click);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(25, 67);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(178, 29);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Enter Group ID:";
             // 
             // manageHumanResouresForm
             // 
@@ -511,6 +534,7 @@
             this.Load += new System.EventHandler(this.manageHumanResouresForm_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -521,7 +545,6 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,5 +585,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonStatistics;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxGroupID_Remove;
     }
 }

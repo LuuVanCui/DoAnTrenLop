@@ -43,10 +43,11 @@ namespace MainForm
             {
                 if (selectContact.dataGridViewData.Rows.Count > 0)
                 {
-                    int contactId = Convert.ToInt32(selectContact.dataGridViewData.CurrentRow.Cells[0].Value.ToString());
+                    int contactId = Convert.ToInt32(selectContact.dataGridViewData.CurrentRow.Cells[0].Value.ToString().Trim());
+                    int group_id = Convert.ToInt32(selectContact.dataGridViewData.CurrentRow.Cells[3].Value.ToString().Trim());
 
                     CONTACT contact = new CONTACT();
-                    string query = "SELECT * FROM mycontact WHERE id = " + contactId;
+                    string query = "SELECT * FROM mycontact WHERE id = " + contactId + " AND group_id = " + group_id;
                     DataTable table = contact.getContact(new SqlCommand(query));
 
                     textBoxID.Text = table.Rows[0]["id"].ToString();
@@ -77,7 +78,7 @@ namespace MainForm
                 int id = Int32.Parse(textBoxID.Text);
                 string fname = textBoxFirstName.Text;
                 string lname = textBoxLastName.Text;
-                string group_id = comboBoxGroup.SelectedValue.ToString();
+                int group_id = Int32.Parse(comboBoxGroup.SelectedValue.ToString());
                 string phone = textBoxPhone.Text;
                 string email = textBoxEmail.Text;
                 string address = textBoxAddress.Text;
@@ -93,7 +94,7 @@ namespace MainForm
                     else
                     {
                         MessageBox.Show("Error", "Edit Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    }   
                 }
                 else
                 {

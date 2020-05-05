@@ -28,12 +28,6 @@ namespace MainForm
                     "WHERE mycontact.userid = " + Globals.GlobalUserID +
                     "GROUP BY [group].name";
                 DataTable table = contact.getContact(new System.Data.SqlClient.SqlCommand(query));
-
-                var chartArea = new ChartArea("Group");
-                chartArea.AxisX.Title = "xxx";
-                chartArea.AxisY.Title = "yyy";
-              //  chartGroup.ChartAreas.Axist
-
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
                     string item = table.Rows[i][0].ToString();
@@ -42,6 +36,16 @@ namespace MainForm
                 }
             }
             catch { }
+        }
+
+        private void buttonClumnChart_Click(object sender, EventArgs e)
+        {
+            chartGroup.Series[0].ChartType = SeriesChartType.Column;
+        }
+
+        private void buttonPieChart_Click(object sender, EventArgs e)
+        {
+            chartGroup.Series[0].ChartType = SeriesChartType.Pie;
         }
     }
 }
