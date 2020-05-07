@@ -140,7 +140,7 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "addCourseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "addCourseForm";
+            this.Text = "Add Course";
             this.Load += new System.EventHandler(this.addCourseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

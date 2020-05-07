@@ -89,7 +89,7 @@
             this.Controls.Add(this.dataGridViewCourse);
             this.Name = "PrintCourseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PrintCourseForm";
+            this.Text = "Print Courses";
             this.Load += new System.EventHandler(this.PrintCourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourse)).EndInit();
             this.ResumeLayout(false);

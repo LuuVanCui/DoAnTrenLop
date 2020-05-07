@@ -112,7 +112,7 @@
             this.Controls.Add(this.panelMale);
             this.Name = "StaticsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "StaticsForm";
+            this.Text = "Student Statistics";
             this.Load += new System.EventHandler(this.StaticsForm_Load);
             this.panelMale.ResumeLayout(false);
             this.panelFemale.ResumeLayout(false);

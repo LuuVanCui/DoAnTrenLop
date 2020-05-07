@@ -192,7 +192,7 @@
             this.dataGridViewManageScore.RowTemplate.Height = 28;
             this.dataGridViewManageScore.Size = new System.Drawing.Size(974, 550);
             this.dataGridViewManageScore.TabIndex = 4;
-           // 
+            // 
             // labelTableName
             // 
             this.labelTableName.BackColor = System.Drawing.Color.DodgerBlue;
@@ -229,7 +229,7 @@
             this.Controls.Add(this.label1);
             this.Name = "manageScoreForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "manageScoreForm";
+            this.Text = "Manage Score";
             this.Load += new System.EventHandler(this.manageScoreForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManageScore)).EndInit();
             this.ResumeLayout(false);

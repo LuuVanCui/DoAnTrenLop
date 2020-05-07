@@ -179,7 +179,7 @@
             this.Controls.Add(this.label1);
             this.Name = "addScoreForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddScoreForm";
+            this.Text = "Add Score";
             this.Load += new System.EventHandler(this.addScoreForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudent)).EndInit();
             this.ResumeLayout(false);

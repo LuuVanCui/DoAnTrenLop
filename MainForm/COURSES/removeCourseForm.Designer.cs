@@ -76,7 +76,7 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "removeCourseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "removeCourseForm";
+            this.Text = "Remove Courses";
             this.Load += new System.EventHandler(this.removeCourseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

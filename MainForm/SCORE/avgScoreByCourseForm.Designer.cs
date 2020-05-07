@@ -53,7 +53,7 @@
             this.Controls.Add(this.dataGridViewAvgScore);
             this.Name = "avgScoreByCourseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "avgScoreByCourseForm";
+            this.Text = "AVG Score By Courses";
             this.Load += new System.EventHandler(this.avgScoreByCourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvgScore)).EndInit();
             this.ResumeLayout(false);

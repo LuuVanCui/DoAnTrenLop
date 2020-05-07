@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartGroup = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonClumnChart = new System.Windows.Forms.Button();
@@ -41,18 +41,19 @@
             // chartGroup
             // 
             this.chartGroup.BackColor = System.Drawing.Color.DarkSlateGray;
-            chartArea4.Name = "ChartArea1";
-            this.chartGroup.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartGroup.Legends.Add(legend4);
+            this.chartGroup.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
+            chartArea1.Name = "ChartArea1";
+            this.chartGroup.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartGroup.Legends.Add(legend1);
             this.chartGroup.Location = new System.Drawing.Point(44, 104);
             this.chartGroup.Name = "chartGroup";
             this.chartGroup.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series4.ChartArea = "ChartArea1";
-            series4.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series4.Legend = "Legend1";
-            series4.Name = "Group";
-            this.chartGroup.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Legend = "Legend1";
+            series1.Name = "Group";
+            this.chartGroup.Series.Add(series1);
             this.chartGroup.Size = new System.Drawing.Size(435, 296);
             this.chartGroup.TabIndex = 0;
             this.chartGroup.Text = "chart1";
@@ -109,7 +110,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.Name = "statisticsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "statisticsForm";
+            this.Text = "Statistics";
             this.Load += new System.EventHandler(this.statisticsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartGroup)).EndInit();
             this.ResumeLayout(false);

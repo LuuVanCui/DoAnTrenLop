@@ -52,7 +52,7 @@
             this.Controls.Add(this.dataGridViewData);
             this.Name = "selectContactForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "selectContactForm";
+            this.Text = "Select Contact";
             this.Load += new System.EventHandler(this.selectContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);

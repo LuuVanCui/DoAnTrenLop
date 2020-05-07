@@ -68,7 +68,7 @@
             this.Controls.Add(this.dataGridViewScore);
             this.Name = "removeScoreForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "removeScoreForm";
+            this.Text = "Remove Score";
             this.Load += new System.EventHandler(this.removeScoreForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewScore)).EndInit();
             this.ResumeLayout(false);

@@ -109,7 +109,7 @@
             this.Controls.Add(this.dataGridViewPrint);
             this.Name = "printScoresForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "printScoresForm";
+            this.Text = "Print Courses";
             this.Load += new System.EventHandler(this.printScoresForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrint)).EndInit();
             this.ResumeLayout(false);

@@ -167,7 +167,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "StudentListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "StudentListForm";
+            this.Text = "Student List";
             this.Load += new System.EventHandler(this.StudentListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.stdBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

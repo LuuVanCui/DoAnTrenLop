@@ -142,7 +142,7 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "editCourseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "editCourseForm";
+            this.Text = "Edit Course";
             this.Load += new System.EventHandler(this.editCourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPeriod)).EndInit();
             this.ResumeLayout(false);

@@ -318,7 +318,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UpdateDeleteStudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UpdateDeleteStudentForm";
+            this.Text = "Update And Delete Student";
             this.Load += new System.EventHandler(this.UpdateDeleteStudentForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

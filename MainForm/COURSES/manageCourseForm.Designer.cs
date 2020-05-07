@@ -257,7 +257,7 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "manageCourseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "manageCourseForm";
+            this.Text = "Manage Courses";
             this.Load += new System.EventHandler(this.manageCourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).EndInit();
             this.ResumeLayout(false);
