@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.bntFind = new System.Windows.Forms.Button();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.comboBoxID = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
@@ -77,14 +77,6 @@
             this.bntFind.Text = "Find";
             this.bntFind.UseVisualStyleBackColor = false;
             this.bntFind.Click += new System.EventHandler(this.bntFind_Click);
-            // 
-            // txtID
-            // 
-            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(187, 38);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(204, 32);
-            this.txtID.TabIndex = 2;
             // 
             // label2
             // 
@@ -289,12 +281,22 @@
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // comboBoxID
+            // 
+            this.comboBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxID.FormattingEnabled = true;
+            this.comboBoxID.Location = new System.Drawing.Point(187, 38);
+            this.comboBoxID.Name = "comboBoxID";
+            this.comboBoxID.Size = new System.Drawing.Size(212, 33);
+            this.comboBoxID.TabIndex = 8;
+            // 
             // UpdateDeleteStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(1190, 675);
+            this.Controls.Add(this.comboBoxID);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.dateTimePicker1);
@@ -304,7 +306,6 @@
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnUploadImage);
             this.Controls.Add(this.bntFind);
             this.Controls.Add(this.label8);
@@ -316,6 +317,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UpdateDeleteStudentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateDeleteStudentForm";
             this.Load += new System.EventHandler(this.UpdateDeleteStudentForm_Load);
             this.panel1.ResumeLayout(false);
@@ -329,7 +331,6 @@
         #endregion
         private System.Windows.Forms.Button btnEdit;
         public System.Windows.Forms.Button bntFind;
-        public System.Windows.Forms.TextBox txtID;
         public System.Windows.Forms.TextBox txtFirstName;
         public System.Windows.Forms.TextBox txtLastName;
         public System.Windows.Forms.Label label1;
@@ -349,5 +350,6 @@
         public System.Windows.Forms.RadioButton rBntFemale;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.ComboBox comboBoxID;
     }
 }

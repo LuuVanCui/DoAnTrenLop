@@ -17,7 +17,6 @@ namespace MainForm
         public UpdateDeleteStudentForm()
         {
             InitializeComponent();
-            txtID.KeyPress += TxtID_KeyPress;
             btnUploadImage.Click += BtnUploadImage_Click;
             btnEdit.Click += BtnEdit_Click;
         }
@@ -55,7 +54,7 @@ namespace MainForm
             {
                 try
                 {
-                    id = Convert.ToInt32(txtID.Text);
+                    id = Convert.ToInt32(comboBoxID.Text);
                     pictureBoxImage.Image.Save(pic, pictureBoxImage.Image.RawFormat);
                     if (student.updateStudent(id, lname, fname, bdate, gender, phone, adrs, pic))
                     {
@@ -118,7 +117,7 @@ namespace MainForm
         {
             try
             {
-                int id = int.Parse(txtID.Text);
+                int id = int.Parse(comboBoxID.Text);
            
                 SqlCommand command = new SqlCommand("SELECT id, fname, lname, bdate, gender, phone, address, picture FROM std WHERE id = " + id);
 
@@ -164,7 +163,7 @@ namespace MainForm
             // delete student
             try
             {
-                int studentID = Convert.ToInt32(txtID.Text);
+                int studentID = Convert.ToInt32(comboBoxID.Text);
                 // dislay a confirmation message before the delete
                 if (MessageBox.Show("Are you sure you want to delete this student", "Delete Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -172,7 +171,7 @@ namespace MainForm
                     {
                         MessageBox.Show("Student deleted", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         // Clear field after delete
-                        txtID.Text = "";
+                        UpdateDeleteStudentForm_Load(sender, e);
                         txtFirstName.Text = "";
                         txtLastName.Text = "";
                         txtAddress.Text = "";
@@ -194,7 +193,8 @@ namespace MainForm
 
         private void UpdateDeleteStudentForm_Load(object sender, EventArgs e)
         {
-
+            comboBoxID.DataSource = student.getStudent(new SqlCommand("SELECT * FROM std"));
+            comboBoxID.DisplayMember = "id";
         }
     }
 }

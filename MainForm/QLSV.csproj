@@ -82,18 +82,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addContactForm.cs">
+    <Compile Include="HUMAN RESOURSES\addContactForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addContactForm.Designer.cs">
+    <Compile Include="HUMAN RESOURSES\addContactForm.Designer.cs">
       <DependentUpon>addContactForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CLASS\RESULT.cs" />
-    <Compile Include="CONTACT.cs" />
-    <Compile Include="contactFullListForm.cs">
+    <Compile Include="HUMAN RESOURSES\CONTACT.cs" />
+    <Compile Include="HUMAN RESOURSES\contactFullListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="contactFullListForm.Designer.cs">
+    <Compile Include="HUMAN RESOURSES\contactFullListForm.Designer.cs">
       <DependentUpon>contactFullListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="COURSES\addCourseForm.cs">
@@ -127,29 +127,29 @@
     <Compile Include="COURSES\removeCourseForm.Designer.cs">
       <DependentUpon>removeCourseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="createNewAccountForm.cs">
+    <Compile Include="HUMAN RESOURSES\createNewAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="createNewAccountForm.Designer.cs">
+    <Compile Include="HUMAN RESOURSES\createNewAccountForm.Designer.cs">
       <DependentUpon>createNewAccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="editContactForm.cs">
+    <Compile Include="HUMAN RESOURSES\editContactForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="editContactForm.Designer.cs">
+    <Compile Include="HUMAN RESOURSES\editContactForm.Designer.cs">
       <DependentUpon>editContactForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="editMyProfileForm.cs">
+    <Compile Include="HUMAN RESOURSES\editMyProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="editMyProfileForm.Designer.cs">
+    <Compile Include="HUMAN RESOURSES\editMyProfileForm.Designer.cs">
       <DependentUpon>editMyProfileForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GROUP.cs" />
-    <Compile Include="manageHumanResouresForm.cs">
+    <Compile Include="HUMAN RESOURSES\GROUP.cs" />
+    <Compile Include="HUMAN RESOURSES\manageHumanResouresForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manageHumanResouresForm.Designer.cs">
+    <Compile Include="HUMAN RESOURSES\manageHumanResouresForm.Designer.cs">
       <DependentUpon>manageHumanResouresForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RESULT\resultForm.cs">
@@ -195,16 +195,16 @@
       <DependentUpon>removeScoreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CLASS\SCORE.cs" />
-    <Compile Include="selectContactForm.cs">
+    <Compile Include="HUMAN RESOURSES\selectContactForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="selectContactForm.Designer.cs">
+    <Compile Include="HUMAN RESOURSES\selectContactForm.Designer.cs">
       <DependentUpon>selectContactForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="statisticsForm.cs">
+    <Compile Include="HUMAN RESOURSES\statisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="statisticsForm.Designer.cs">
+    <Compile Include="HUMAN RESOURSES\statisticsForm.Designer.cs">
       <DependentUpon>statisticsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="STUDENT\frmAddStudent.cs">
@@ -264,11 +264,11 @@
     <Compile Include="STUDENT\UpdateDeleteStudentForm.Designer.cs">
       <DependentUpon>UpdateDeleteStudentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="USER.cs" />
-    <EmbeddedResource Include="addContactForm.resx">
+    <Compile Include="HUMAN RESOURSES\USER.cs" />
+    <EmbeddedResource Include="HUMAN RESOURSES\addContactForm.resx">
       <DependentUpon>addContactForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="contactFullListForm.resx">
+    <EmbeddedResource Include="HUMAN RESOURSES\contactFullListForm.resx">
       <DependentUpon>contactFullListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="COURSES\addCourseForm.resx">
@@ -286,16 +286,16 @@
     <EmbeddedResource Include="COURSES\removeCourseForm.resx">
       <DependentUpon>removeCourseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="createNewAccountForm.resx">
+    <EmbeddedResource Include="HUMAN RESOURSES\createNewAccountForm.resx">
       <DependentUpon>createNewAccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="editContactForm.resx">
+    <EmbeddedResource Include="HUMAN RESOURSES\editContactForm.resx">
       <DependentUpon>editContactForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="editMyProfileForm.resx">
+    <EmbeddedResource Include="HUMAN RESOURSES\editMyProfileForm.resx">
       <DependentUpon>editMyProfileForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manageHumanResouresForm.resx">
+    <EmbeddedResource Include="HUMAN RESOURSES\manageHumanResouresForm.resx">
       <DependentUpon>manageHumanResouresForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RESULT\resultForm.resx">
@@ -319,10 +319,10 @@
     <EmbeddedResource Include="SCORE\removeScoreForm.resx">
       <DependentUpon>removeScoreForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="selectContactForm.resx">
+    <EmbeddedResource Include="HUMAN RESOURSES\selectContactForm.resx">
       <DependentUpon>selectContactForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="statisticsForm.resx">
+    <EmbeddedResource Include="HUMAN RESOURSES\statisticsForm.resx">
       <DependentUpon>statisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="STUDENT\frmAddStudent.resx">
@@ -390,6 +390,8 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\thuc-hien-tot-noi-quy-nha-truong-182067.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

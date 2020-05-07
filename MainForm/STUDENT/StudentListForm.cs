@@ -31,7 +31,7 @@ namespace MainForm
         {
             // lấy dữ liệu từ datagridview qua
             UpdateDeleteStudentForm updateDeleteStdF = new UpdateDeleteStudentForm();
-            updateDeleteStdF.txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            updateDeleteStdF.comboBoxID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             updateDeleteStdF.txtFirstName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             updateDeleteStdF.txtLastName.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             updateDeleteStdF.dateTimePicker1.Value = (DateTime)dataGridView1.CurrentRow.Cells[3].Value;

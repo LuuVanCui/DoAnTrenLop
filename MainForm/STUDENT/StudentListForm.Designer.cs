@@ -32,9 +32,6 @@
             this.stdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.qLSVDataSet = new MainForm.QLSVDataSet();
-            this.stdBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.stdTableAdapter = new MainForm.QLSVDataSetTableAdapters.stdTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,10 +40,13 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.stdBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.qLSVDataSet = new MainForm.QLSVDataSet();
+            this.stdTableAdapter = new MainForm.QLSVDataSetTableAdapters.stdTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.stdBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLSVDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // stdBindingSource
@@ -87,20 +87,6 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1171, 428);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // qLSVDataSet
-            // 
-            this.qLSVDataSet.DataSetName = "QLSVDataSet";
-            this.qLSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stdBindingSource1
-            // 
-            this.stdBindingSource1.DataMember = "std";
-            this.stdBindingSource1.DataSource = this.qLSVDataSet;
-            // 
-            // stdTableAdapter
-            // 
-            this.stdTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -158,6 +144,20 @@
             this.dataGridViewImageColumn1.MinimumWidth = 8;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
+            // stdBindingSource1
+            // 
+            this.stdBindingSource1.DataMember = "std";
+            this.stdBindingSource1.DataSource = this.qLSVDataSet;
+            // 
+            // qLSVDataSet
+            // 
+            this.qLSVDataSet.DataSetName = "QLSVDataSet";
+            this.qLSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stdTableAdapter
+            // 
+            this.stdTableAdapter.ClearBeforeFill = true;
+            // 
             // StudentListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -166,12 +166,13 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dataGridView1);
             this.Name = "StudentListForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentListForm";
             this.Load += new System.EventHandler(this.StudentListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.stdBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLSVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLSVDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

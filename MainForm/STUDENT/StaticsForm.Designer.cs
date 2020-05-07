@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panelMale = new System.Windows.Forms.Panel();
+            this.labelMale = new System.Windows.Forms.Label();
             this.panelFemale = new System.Windows.Forms.Panel();
+            this.labelFemale = new System.Windows.Forms.Label();
             this.panelTotal = new System.Windows.Forms.Panel();
             this.labelTotal = new System.Windows.Forms.Label();
-            this.labelMale = new System.Windows.Forms.Label();
-            this.labelFemale = new System.Windows.Forms.Label();
             this.panelMale.SuspendLayout();
             this.panelFemale.SuspendLayout();
             this.panelTotal.SuspendLayout();
@@ -48,6 +48,18 @@
             this.panelMale.Size = new System.Drawing.Size(302, 165);
             this.panelMale.TabIndex = 1;
             // 
+            // labelMale
+            // 
+            this.labelMale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMale.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelMale.Location = new System.Drawing.Point(0, 3);
+            this.labelMale.Name = "labelMale";
+            this.labelMale.Size = new System.Drawing.Size(302, 162);
+            this.labelMale.TabIndex = 0;
+            this.labelMale.Text = "Male: 100%";
+            this.labelMale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelFemale
             // 
             this.panelFemale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -56,6 +68,18 @@
             this.panelFemale.Name = "panelFemale";
             this.panelFemale.Size = new System.Drawing.Size(309, 165);
             this.panelFemale.TabIndex = 2;
+            // 
+            // labelFemale
+            // 
+            this.labelFemale.BackColor = System.Drawing.Color.ForestGreen;
+            this.labelFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFemale.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelFemale.Location = new System.Drawing.Point(0, 0);
+            this.labelFemale.Name = "labelFemale";
+            this.labelFemale.Size = new System.Drawing.Size(309, 165);
+            this.labelFemale.TabIndex = 0;
+            this.labelFemale.Text = "Female: 100%";
+            this.labelFemale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelTotal
             // 
@@ -78,30 +102,6 @@
             this.labelTotal.Text = "Total Students: 100%";
             this.labelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelMale
-            // 
-            this.labelMale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMale.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelMale.Location = new System.Drawing.Point(0, 3);
-            this.labelMale.Name = "labelMale";
-            this.labelMale.Size = new System.Drawing.Size(302, 162);
-            this.labelMale.TabIndex = 0;
-            this.labelMale.Text = "Male: 100%";
-            this.labelMale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelFemale
-            // 
-            this.labelFemale.BackColor = System.Drawing.Color.ForestGreen;
-            this.labelFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFemale.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelFemale.Location = new System.Drawing.Point(0, 0);
-            this.labelFemale.Name = "labelFemale";
-            this.labelFemale.Size = new System.Drawing.Size(309, 165);
-            this.labelFemale.TabIndex = 0;
-            this.labelFemale.Text = "Female: 100%";
-            this.labelFemale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // StaticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -111,6 +111,7 @@
             this.Controls.Add(this.panelFemale);
             this.Controls.Add(this.panelMale);
             this.Name = "StaticsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaticsForm";
             this.Load += new System.EventHandler(this.StaticsForm_Load);
             this.panelMale.ResumeLayout(false);

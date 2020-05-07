@@ -30,62 +30,10 @@ namespace MainForm
         {
             RESULT result = new RESULT();
             dataGridViewResult.ReadOnly = true;
-
-            dataGridViewResult.DataSource = result.getResult();
-
-            #region Code nháp theo bài mẫu của thầy
-            //string query = "SELECT DISTINCT dbo.std.id, fname, lname " +
-            //    "FROM dbo.Score INNER JOIN dbo.std ON dbo.Score.student_id = std.id" +
-            //    " INNER JOIN dbo.Course ON dbo.Course.id = dbo.Score.course_id " +
-            //    "ORDER BY dbo.std.id";
-
-            //DataTable tableGrid = score.getData(new SqlCommand(query));
-
-            //string query2 = "SELECT student_id, label, student_score " +
-            //    "FROM Course INNER JOIN dbo.Score ON dbo.Course.id = dbo.Score.course_id " +
-            //    "ORDER BY student_id";
-
-            //DataTable table_score = score.getData(new SqlCommand(query2));
-
-            //DataTable tableAddColumn = score.getData(new SqlCommand("SELECT label FROM Course"));
-
-            //for(int i = 0; i < tableAddColumn.Rows.Count; i++)
-            //{
-            //    string colName = tableAddColumn.Rows[i][0].ToString();
-            //    tableGrid.Columns.Add(colName, typeof(System.Double));
-            //}
-
-            
-
-            //for (int i = 0; i < tableGrid.Rows.Count; i++)
-            //{
-            //    for (int j = 0; j < table_score.Rows.Count; j++)
-            //    {
-            //        string colName = table_score.Rows[j]["label"].ToString();
-            //        if (tableGrid.Rows[i][0] == table_score.Rows[j][0])
-            //        {
-            //            tableGrid.Rows[i][colName] = table_score.Rows[j]["student_score"];
-            //        }
-            //    }
-            //}
-            //dataGridViewResult.DataSource = tableGrid;
-            ////dataGridViewResult.Columns.Add("Result", "result");
-            #endregion
-        }
-
-        void calculateScore()
-        {
-
-        }
-
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-            string query = "SELECT id, fname, lname, avg(student_score) as avg_score" +
-                "FROM std inner join score on std.id = score.student_id" +
-                "WHERE CONCAT(id, fname, lname) LIKE '%" + textBoxSearch.Text + "%'" +
-                "GROUP BY id, fname, lname";
-            SqlCommand command = new SqlCommand();
-            dataGridViewResult.DataSource = score.getData(command);
+            string query = "SELECT id, fname, lname FROM std";
+            dataGridViewResult.DataSource = result.getResult(query);
+            dataGridViewResult_Click(sender, e);
+            makeUpGid();
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)
@@ -99,6 +47,28 @@ namespace MainForm
 
             if (printDlg.ShowDialog() == DialogResult.OK)
                 printDoc.Print();
+        }
+
+        private void dataGridViewResult_Click(object sender, EventArgs e)
+        {
+            textBoxID.Text = dataGridViewResult.CurrentRow.Cells[0].Value.ToString();
+            textBoxFirstName.Text = dataGridViewResult.CurrentRow.Cells[1].Value.ToString();
+            textBoxLastName.Text = dataGridViewResult.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            RESULT result = new RESULT();
+            string query = "SELECT id, fname, lname FROM std WHERE CONCAT(id, fname, lname) LIKE '%" + textBoxSearch.Text + "%'";
+            dataGridViewResult.DataSource = result.getResult(query);
+            makeUpGid();
+        }
+
+        void makeUpGid()
+        {
+            dataGridViewResult.Columns[0].HeaderText = "Student ID";
+            dataGridViewResult.Columns[1].HeaderText = "First Name";
+            dataGridViewResult.Columns[2].HeaderText = "Last Name";
         }
     }
 }

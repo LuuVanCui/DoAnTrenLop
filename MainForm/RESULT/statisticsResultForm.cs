@@ -49,7 +49,8 @@ namespace MainForm
         {
            
                 RESULT result = new RESULT();
-                DataTable table = result.getResult();
+                string query = "SELECT id, fname, lname FROM std";
+                DataTable table = result.getResult(query);
 
                 string[] item = new string[5] { "Excellent", "Good", "Average", "Below Average", "Weak" };
                 int[] arr = new int[5] { 0, 0, 0, 0, 0 };
@@ -57,7 +58,7 @@ namespace MainForm
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
                     
-                    float _score = float.Parse(table.Rows[i]["avg_score"].ToString());
+                    float _score = float.Parse(table.Rows[i]["AVG Score"].ToString());
 
                     if (_score >= 8.5)
                     {
@@ -85,6 +86,42 @@ namespace MainForm
                     if (arr[i] > 0)
                       chartResult.Series["Result"].Points.AddXY(item[i], arr[i]);
                 }
+        }
+
+        private void buttonSet_Click(object sender, EventArgs e)
+        {
+            string type = comboBoxTypeChart.Text.Trim();
+            if (checkBoxCourses.Checked == true)
+            {
+              if (type == "Line Chart")
+                {
+                    chartCourses.Series["Courses"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                }   
+              else if (type == "Pie Chart")
+                {
+                    chartCourses.Series["Courses"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+                }   
+              else
+                {
+                    chartCourses.Series["Courses"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                }                    
+            }
+
+            if (checkBoxResult.Checked == true)
+            {
+                if (type == "Line Chart")
+                {
+                    chartResult.Series["Result"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                }
+                else if (type == "Pie Chart")
+                {
+                    chartResult.Series["Result"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+                }
+                else
+                {
+                    chartResult.Series["Result"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                }
+            }    
         }
     }
 }

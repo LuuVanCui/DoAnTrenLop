@@ -110,10 +110,5 @@ namespace MainForm
                 return true;
             }
         }
-
-        private void frmAddStudent_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

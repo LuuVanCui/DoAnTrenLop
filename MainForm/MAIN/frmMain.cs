@@ -27,7 +27,7 @@ namespace MainForm
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
