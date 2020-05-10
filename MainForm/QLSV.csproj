@@ -152,6 +152,12 @@
     <Compile Include="HUMAN RESOURSES\manageHumanResouresForm.Designer.cs">
       <DependentUpon>manageHumanResouresForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="manageStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manageStudentForm.Designer.cs">
+      <DependentUpon>manageStudentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RESULT\resultForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,12 +231,6 @@
     <Compile Include="MAIN\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="STUDENT\manageStudentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="STUDENT\manageStudentForm.Designer.cs">
-      <DependentUpon>manageStudentForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="CLASS\MY_DB.cs" />
     <Compile Include="STUDENT\PrintStudentForm.cs">
       <SubType>Form</SubType>
@@ -298,6 +298,9 @@
     <EmbeddedResource Include="HUMAN RESOURSES\manageHumanResouresForm.resx">
       <DependentUpon>manageHumanResouresForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="manageStudentForm.resx">
+      <DependentUpon>manageStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RESULT\resultForm.resx">
       <DependentUpon>resultForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,9 +336,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MAIN\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="STUDENT\manageStudentForm.resx">
-      <DependentUpon>manageStudentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="STUDENT\PrintStudentForm.resx">
       <DependentUpon>PrintStudentForm.cs</DependentUpon>
