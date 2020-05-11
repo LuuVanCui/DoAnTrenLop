@@ -30,7 +30,7 @@ namespace MainForm
         {
             RESULT result = new RESULT();
             dataGridViewResult.ReadOnly = true;
-            string query = "SELECT id, fname, lname FROM std";
+            string query = "SELECT distinct id, fname, lname FROM std inner join Score on std.id = score.student_id";
             dataGridViewResult.DataSource = result.getResult(query);
             dataGridViewResult_Click(sender, e);
             makeUpGid();
@@ -59,7 +59,7 @@ namespace MainForm
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             RESULT result = new RESULT();
-            string query = "SELECT id, fname, lname FROM std WHERE CONCAT(id, fname, lname) LIKE '%" + textBoxSearch.Text + "%'";
+            string query = "SELECT distinct id, fname, lname FROM std inner join Score on std.id = score.student_id WHERE CONCAT(id, fname, lname) LIKE '%" + textBoxSearch.Text + "%'";
             dataGridViewResult.DataSource = result.getResult(query);
             makeUpGid();
         }

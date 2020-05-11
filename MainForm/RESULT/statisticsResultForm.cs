@@ -49,8 +49,8 @@ namespace MainForm
         {
            
                 RESULT result = new RESULT();
-                string query = "SELECT id, fname, lname FROM std";
-                DataTable table = result.getResult(query);
+            string query = "SELECT distinct id, fname, lname FROM std inner join Score on std.id = score.student_id";
+            DataTable table = result.getResult(query);
 
                 string[] item = new string[5] { "Excellent", "Good", "Average", "Below Average", "Weak" };
                 int[] arr = new int[5] { 0, 0, 0, 0, 0 };
