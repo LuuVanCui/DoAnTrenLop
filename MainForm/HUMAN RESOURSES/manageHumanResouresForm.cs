@@ -217,7 +217,10 @@ namespace MainForm
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("Do you want to exit?", "Exit", MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Close();
+            }    
         }
 
         private void linkLabelEditMyInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
