@@ -42,6 +42,35 @@ namespace MainForm
             }
         }
 
+        public bool editScore(int studentID, int courseID, float studentScore, string description)
+        {
+            SqlCommand command = new SqlCommand("UPDATE Score SET student_score = @ss, description = @des WHERE student_id = @sid AND course_id = @cid", mydb.getConnection);
+            command.Parameters.Add("@sid", SqlDbType.Int).Value = studentID;
+            command.Parameters.Add("@cid", SqlDbType.Int).Value = courseID;
+            command.Parameters.Add("@ss", SqlDbType.Float).Value = studentScore;
+            command.Parameters.Add("@des", SqlDbType.Text).Value = description;
+
+            mydb.openConnection();
+            try
+            {
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    mydb.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    mydb.closeConnection();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
         public bool deleteScore(int studentID, int courseID)
         {
             SqlCommand command = new SqlCommand("DELETE FROM Score WHERE student_id = @sid AND course_id = @cid", mydb.getConnection);

@@ -198,7 +198,7 @@
             this.btnUploadImage.TabIndex = 1;
             this.btnUploadImage.Text = "Upload Image";
             this.btnUploadImage.UseVisualStyleBackColor = false;
-            this.btnUploadImage.Click += new System.EventHandler(this.bntFind_Click);
+            this.btnUploadImage.Click += new System.EventHandler(this.BtnUploadImage_Click);
             // 
             // rBntMale
             // 
@@ -257,7 +257,7 @@
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.bntFind_Click);
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // dateTimePicker1
             // 

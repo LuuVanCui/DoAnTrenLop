@@ -119,6 +119,7 @@
             this.comboBoxCourse.Name = "comboBoxCourse";
             this.comboBoxCourse.Size = new System.Drawing.Size(278, 33);
             this.comboBoxCourse.TabIndex = 2;
+            this.comboBoxCourse.SelectedIndexChanged += new System.EventHandler(this.comboBoxCourse_SelectedIndexChanged);
             this.comboBoxCourse.DropDownClosed += new System.EventHandler(this.comboBoxCourse_DropDownClosed);
             // 
             // buttonAddScore

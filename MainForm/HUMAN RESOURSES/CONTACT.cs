@@ -22,8 +22,8 @@ namespace MainForm
             command.Parameters.Add("@fn", SqlDbType.VarChar).Value = fname;
             command.Parameters.Add("@ln", SqlDbType.VarChar).Value = lname;
             command.Parameters.Add("@gID", SqlDbType.Int).Value = groupID;
-            command.Parameters.Add("@phn", SqlDbType.NChar).Value = phone;
-            command.Parameters.Add("@email", SqlDbType.NChar).Value = email;
+            command.Parameters.Add("@phn", SqlDbType.VarChar).Value = phone;
+            command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
             command.Parameters.Add("@adr", SqlDbType.Text).Value = address;
             command.Parameters.Add("@pic", SqlDbType.Image).Value = picture.ToArray();
             command.Parameters.Add("@uid", SqlDbType.Int).Value = Globals.GlobalUserID;
@@ -86,8 +86,8 @@ namespace MainForm
             command.Parameters.Add("@fn", SqlDbType.VarChar).Value = fname;
             command.Parameters.Add("@ln", SqlDbType.VarChar).Value = lname;
             command.Parameters.Add("@gID", SqlDbType.Int).Value = groupID;
-            command.Parameters.Add("@phn", SqlDbType.NChar).Value = phone;
-            command.Parameters.Add("@email", SqlDbType.NChar).Value = email;
+            command.Parameters.Add("@phn", SqlDbType.VarChar).Value = phone;
+            command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
             command.Parameters.Add("@adr", SqlDbType.Text).Value = address;
             command.Parameters.Add("@pic", SqlDbType.Image).Value = picture.ToArray();
             command.Parameters.Add("@uid", SqlDbType.Int).Value = Globals.GlobalUserID;

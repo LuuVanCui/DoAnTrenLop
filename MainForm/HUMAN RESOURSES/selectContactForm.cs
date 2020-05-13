@@ -22,7 +22,7 @@ namespace MainForm
         {
             dataGridViewData.ReadOnly = true;
             CONTACT contact = new CONTACT();
-            SqlCommand command = new SqlCommand("SELECT  id as 'Contact ID',  fname  as 'First Name',  lname  as 'Last Name',  group_id  as 'Group ID' FROM mycontact WHERE  userid  = @uid");
+            SqlCommand command = new SqlCommand("SELECT distinct id as 'Contact ID',  fname  as 'First Name',  lname  as 'Last Name',  group_id  as 'Group ID' FROM mycontact WHERE  userid  = @uid");
             command.Parameters.Add("@uid", SqlDbType.Int).Value = Globals.GlobalUserID;
             dataGridViewData.DataSource = contact.getContact(command);
             dataGridViewData.AllowUserToAddRows = false;

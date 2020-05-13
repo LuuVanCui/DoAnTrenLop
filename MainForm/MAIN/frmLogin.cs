@@ -25,7 +25,7 @@ namespace MainForm
         
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
         
         private void btnLogin_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace MainForm
 
                 DataTable table = new DataTable();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM login WHERE username = @User AND password = @Pass", db.getConnection);
+                SqlCommand command = new SqlCommand("SELECT * FROM hr WHERE uname = @User AND pwd = @Pass", db.getConnection);
 
                 command.Parameters.Add("@User", SqlDbType.VarChar).Value = txtUser.Text;
                 command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = txtPass.Text;

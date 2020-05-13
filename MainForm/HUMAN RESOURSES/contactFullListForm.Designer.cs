@@ -35,8 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxFullAddress = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonPrint = new System.Windows.Forms.Button();
             this.buttonExportExelFile = new System.Windows.Forms.Button();
+            this.buttonPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShowData)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -120,19 +120,6 @@
             this.panel1.Size = new System.Drawing.Size(1235, 776);
             this.panel1.TabIndex = 4;
             // 
-            // buttonPrint
-            // 
-            this.buttonPrint.BackColor = System.Drawing.Color.Goldenrod;
-            this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrint.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonPrint.Location = new System.Drawing.Point(675, 668);
-            this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(187, 58);
-            this.buttonPrint.TabIndex = 4;
-            this.buttonPrint.Text = "Print";
-            this.buttonPrint.UseVisualStyleBackColor = false;
-            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
-            // 
             // buttonExportExelFile
             // 
             this.buttonExportExelFile.BackColor = System.Drawing.Color.Goldenrod;
@@ -145,6 +132,19 @@
             this.buttonExportExelFile.Text = "Export Exel File";
             this.buttonExportExelFile.UseVisualStyleBackColor = false;
             this.buttonExportExelFile.Click += new System.EventHandler(this.buttonExportExelFile_Click);
+            // 
+            // buttonPrint
+            // 
+            this.buttonPrint.BackColor = System.Drawing.Color.Goldenrod;
+            this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPrint.ForeColor = System.Drawing.Color.DarkBlue;
+            this.buttonPrint.Location = new System.Drawing.Point(675, 668);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(187, 58);
+            this.buttonPrint.TabIndex = 4;
+            this.buttonPrint.Text = "Print";
+            this.buttonPrint.UseVisualStyleBackColor = false;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // contactFullListForm
             // 

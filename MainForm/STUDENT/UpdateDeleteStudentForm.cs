@@ -17,8 +17,6 @@ namespace MainForm
         public UpdateDeleteStudentForm()
         {
             InitializeComponent();
-            btnUploadImage.Click += BtnUploadImage_Click;
-            btnEdit.Click += BtnEdit_Click;
         }
 
         STUDENT student = new STUDENT();
@@ -26,14 +24,15 @@ namespace MainForm
         // edit selected student data
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            int id;
+            STUDENT student = new STUDENT();
+            int id = Convert.ToInt32(comboBoxID.Text);
             string fname = txtFirstName.Text;
             string lname = txtLastName.Text;
             DateTime bdate = dateTimePicker1.Value;
             string phone = txtPhone.Text;
             string adrs = txtAddress.Text;
-            
-            string gender = "Male";           
+            string gender = "Male";
+
             if (rBntFemale.Checked)
             {
                 gender = "Female";
@@ -49,25 +48,16 @@ namespace MainForm
             {
                 MessageBox.Show("The student age must be bewteen 10 and 100 year", "Invalid Birth Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             else if (verif())
             {
-                try
+                pictureBoxImage.Image.Save(pic, pictureBoxImage.Image.RawFormat);
+                if (student.updateStudent(id, lname, fname, bdate, gender, phone, adrs, pic))
                 {
-                    id = Convert.ToInt32(comboBoxID.Text);
-                    pictureBoxImage.Image.Save(pic, pictureBoxImage.Image.RawFormat);
-                    if (student.updateStudent(id, lname, fname, bdate, gender, phone, adrs, pic))
-                    {
-                        MessageBox.Show("Student Info Updated", "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error", "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Student Info Updated", "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message, "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Error", "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

@@ -16,7 +16,6 @@ namespace MainForm
         public manageScoreForm()
         {
             InitializeComponent();
-            buttonShowScores.Click += ButtonShowScores_Click;
         }
 
         SCORE score = new SCORE();
@@ -27,8 +26,8 @@ namespace MainForm
         private void manageScoreForm_Load(object sender, EventArgs e)
         {
             showStudent();
-            comboBoxSelectCourse.DataSource = course.getCourse(new SqlCommand("SELECT label FROM Course"));
-            comboBoxSelectCourse.ValueMember = "label";
+            comboBoxSelectCourse.DataSource = course.getCourse(new SqlCommand("SELECT * FROM Course"));
+            comboBoxSelectCourse.ValueMember = "id";
             comboBoxSelectCourse.DisplayMember = "label";
         }
 
@@ -61,7 +60,7 @@ namespace MainForm
             try
             {
                 int studentID = int.Parse(textBoxStudentID.Text);
-                int courseID = (int)comboBoxSelectCourse.SelectedValue;
+                int courseID = Convert.ToInt32(comboBoxSelectCourse.SelectedValue);
                 float scoreValue = float.Parse(textBoxScore.Text);
                 string description = textBoxDescription.Text;
 
@@ -70,6 +69,7 @@ namespace MainForm
                     if (score.insertScore(studentID, courseID, scoreValue, description))
                     {
                         MessageBox.Show("Student Score Added", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        showScores();
                     }
                     else
                     {
@@ -147,6 +147,57 @@ namespace MainForm
         {
             avgScoreByCourseForm avgForm = new avgScoreByCourseForm();
             avgForm.ShowDialog(this);
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int studentID = int.Parse(textBoxStudentID.Text);
+                int courseID = Convert.ToInt32(comboBoxSelectCourse.SelectedValue);
+                float scoreValue = float.Parse(textBoxScore.Text);
+                string description = textBoxDescription.Text;
+
+                if (score.editScore(studentID, courseID, scoreValue, description))
+                {
+                    MessageBox.Show("Student Score Updated", "Edit Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    showScores();
+                }
+                else
+                {
+                    MessageBox.Show("Student Score Not Updated", "Edit Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Edit Score", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dataGridViewManageScore_Click(object sender, EventArgs e)
+        {
+            if (removeStudent == false)
+            {
+                int sid = Convert.ToInt32(dataGridViewManageScore.CurrentRow.Cells[0].Value.ToString());
+                int cid = Convert.ToInt32(dataGridViewManageScore.CurrentRow.Cells[3].Value.ToString());
+                string query = "SELECT SCORE.student_id, COURSE.label, SCORE.student_score, SCORE.description " +
+                "FROM std INNER JOIN Score on std.id = Score.student_id INNER JOIN Course on Course.id = Score.course_id " +
+                "WHERE SCORE.student_id = " + sid + " AND Course.id =" + cid;
+                DataTable table = score.getData(new SqlCommand(query));
+                textBoxStudentID.Text = table.Rows[0][0].ToString();
+                comboBoxSelectCourse.Text = table.Rows[0][1].ToString();
+                textBoxScore.Text = table.Rows[0][2].ToString();
+                textBoxDescription.Text = table.Rows[0][3].ToString();
+            }
+            else
+            {
+                textBoxStudentID.Text = dataGridViewManageScore.CurrentRow.Cells[0].Value.ToString();
+                comboBoxSelectCourse.DataSource = course.getCourse(new SqlCommand("SELECT * FROM Course"));
+                comboBoxSelectCourse.ValueMember = "id";
+                comboBoxSelectCourse.DisplayMember = "label";
+                textBoxScore.Text = null;
+                textBoxDescription.Text = null;
+            }    
         }
     }
 }

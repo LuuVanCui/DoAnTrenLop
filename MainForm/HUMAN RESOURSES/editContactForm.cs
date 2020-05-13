@@ -75,17 +75,19 @@ namespace MainForm
             try
             {
                 CONTACT contact = new CONTACT();
-                int id = Int32.Parse(textBoxID.Text);
+                int id = Convert.ToInt32(textBoxID.Text);
                 string fname = textBoxFirstName.Text;
                 string lname = textBoxLastName.Text;
-                int group_id = Int32.Parse(comboBoxGroup.SelectedValue.ToString());
+                int group_id = Convert.ToInt32(comboBoxGroup.SelectedValue);
                 string phone = textBoxPhone.Text;
                 string email = textBoxEmail.Text;
                 string address = textBoxAddress.Text;
                 MemoryStream pic = new MemoryStream();
 
+                 
                 if (verif())
                 {
+                    
                     pictureBoxPicture.Image.Save(pic, pictureBoxPicture.Image.RawFormat);
                     if (contact.updateContact(id, fname, lname, group_id, phone, email, address, pic))
                     {
@@ -93,8 +95,9 @@ namespace MainForm
                     }
                     else
                     {
-                        MessageBox.Show("Error", "Edit Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }   
+                        //  MessageBox.Show("Error", "Edit Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Updated Contact", "Edit Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {

@@ -125,5 +125,10 @@ namespace MainForm
             int courseID = Convert.ToInt32(comboBoxCourse.SelectedValue.ToString());
             showData(index, courseID);
         }
+
+        private void comboBoxCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
